@@ -23,6 +23,8 @@ export interface CoverSlide {
    * 글이 묻히지 않게 어두운 막을 자동으로 덮는다.
    */
   photo?: string;
+  /** 4:5로 자를 때 남길 부분. 얼굴이나 눈이 잘리면 조정한다 */
+  photoPosition?: "top" | "center" | "bottom";
 }
 
 /**
@@ -105,6 +107,7 @@ and help set the standard it's judged by.`,
     slides: [
       {
         kind: "cover",
+        photo: "02",
         title: "17년,\n그리고 지금",
         subtitle: "박미주 · 아이디자이너 · 래쉬 교육자",
         en: "MIJU PARK — Eye Designer, Lash Educator",
@@ -165,6 +168,7 @@ REFRAME — an eye design system built on facial structure diagnosis.`,
     slides: [
       {
         kind: "cover",
+        photo: "03",
         title: "눈만 보면\n디자인이 안 나옵니다",
         subtitle: "REFRAME — 골격에서 시작하는 아이디자인",
         en: "REFRAME — Eye design starts with the face",
@@ -219,6 +223,7 @@ The client's natural lash decides.`,
     slides: [
       {
         kind: "cover",
+        photo: "06",
         title: "연장 먼저?\n펌 먼저?",
         subtitle: "하이브리드 래쉬의 순서 판단",
         en: "Which comes first in hybrid lash",
@@ -272,6 +277,7 @@ Before you blame the lamp — did you measure the distance?`,
     slides: [
       {
         kind: "cover",
+        photo: "18",
         title: "램프를 바꾸기 전에\n거리를 재세요",
         subtitle: "LED 경화의 첫 번째 기준",
         en: "Measure the distance before blaming the lamp",
@@ -372,6 +378,7 @@ Save this and check your sequence on the next set.`,
     slides: [
       {
         kind: "cover",
+        photo: "07",
         title: "3주 만에\n빠지는 이유",
         subtitle: "글루를 바꾸기 전에 확인할 것",
         en: "Why lashes fall in 3 weeks",
@@ -429,6 +436,7 @@ The best lash artists spend three minutes before they touch a single lash.`,
     slides: [
       {
         kind: "cover",
+        photo: "16",
         title: "상담 3분이\n재방문을 만든다",
         subtitle: "앉히자마자 물어야 할 것",
         en: "Three minutes that bring them back",
@@ -481,6 +489,7 @@ It is not the technique. It is the standard.`,
     slides: [
       {
         kind: "cover",
+        photo: "05",
         title: "한국 속눈썹은\n무엇이 다른가",
         subtitle: "해외에서 가장 많이 묻는 질문",
         en: "What makes Korean lash different",
@@ -571,6 +580,7 @@ I started teaching. Then I had to build the product.`,
     slides: [
       {
         kind: "cover",
+        photo: "04",
         title: "글루를 직접\n만든 이유",
         subtitle: "교육이 먼저였고, 제품은 그다음이었습니다",
         en: "Teaching came first. The product followed.",
@@ -617,6 +627,7 @@ Technique → Education → Product → Competition → Contents → Branding`,
     slides: [
       {
         kind: "cover",
+        photo: "01",
         title: "기술 하나를\n어디까지",
         subtitle: "메뉴에서 끝내지 않는 방법",
         en: "How far can one technique go",
@@ -668,6 +679,7 @@ Artists I've trained have taken first place, repeatedly.`,
     slides: [
       {
         kind: "cover",
+        photo: "11",
         title: "대회에 나가야\n증명됩니다",
         subtitle: "선수 지도에서 실제로 하는 일",
         en: "Why competition proves what training cannot",

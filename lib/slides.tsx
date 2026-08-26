@@ -18,6 +18,7 @@ const { colors: C, type: T, padding: P, size } = BRAND;
 function Frame({
   bg,
   photoSrc,
+  photoPosition,
   top,
   middle,
   bottom,
@@ -26,6 +27,7 @@ function Frame({
   bg: string;
   /** 깔면 배경 사진 위에 글이 앉는다 */
   photoSrc?: string;
+  photoPosition?: "top" | "center" | "bottom";
   top: React.ReactNode;
   middle: React.ReactNode;
   bottom: React.ReactNode;
@@ -44,9 +46,9 @@ function Frame({
         ...(photoSrc
           ? {
               // 사진 위에 어두운 막을 겹쳐야 글자가 읽힌다. 두 겹을 한 번에 준다.
-              backgroundImage: `linear-gradient(to bottom, rgba(20,17,15,0.30) 0%, rgba(20,17,15,0.55) 45%, rgba(20,17,15,0.92) 100%), url(${photoSrc})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(20,17,15,0.12) 0%, rgba(20,17,15,0.38) 42%, rgba(20,17,15,0.90) 100%), url(${photoSrc})`,
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: photoPosition ?? "center",
             }
           : {}),
       }}
@@ -152,6 +154,7 @@ export function renderSlide(
       <Frame
         bg={coverBg}
         photoSrc={slide.photo ? photoUrl(origin, slide.photo) : undefined}
+        photoPosition={slide.photoPosition}
         align="flex-end"
         top={
           <div style={{ display: "flex", flexDirection: "column" }}>
