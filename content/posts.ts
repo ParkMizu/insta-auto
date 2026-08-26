@@ -25,6 +25,13 @@ export interface CoverSlide {
   photo?: string;
   /** 4:5로 자를 때 남길 부분. 얼굴이나 눈이 잘리면 조정한다 */
   photoPosition?: "top" | "center" | "bottom";
+  /**
+   * 글자를 판의 위쪽에 앉힌다.
+   *
+   * 표지는 보통 아래쪽에 글을 두지만, 사진에서 보여줘야 할 것이 아래에 있으면
+   * 글자가 그걸 덮는다. 눈이 아래쪽에 걸린 사진이 그렇다. 이때만 켠다.
+   */
+  textTop?: boolean;
 }
 
 /**
@@ -268,6 +275,68 @@ Save this and check your sequence on the next set.`,
     ],
   },
   {
+    id: "liftensions",
+    caption: `연장 후 펌, 왜 한국에서 자리를 잡았을까요.
+
+한국 손님 속눈썹은 굵고 곧게 자라는 경우가 많습니다.
+그래서 길이만 더하면 무거워 보이고, 컬만 넣으면 허전합니다.
+
+둘을 하나의 디자인으로 묶으면
+"했는데 안 한 것 같은" 결과가 나옵니다.
+요즘은 해외에서도 이 결과를 먼저 물어보십니다.
+
+Why lift and extension became one design in Korea.`,
+    hashtags: [
+      "#연장후펌", "#리프텐션", "#하이브리드래쉬", "#속눈썹연장", "#속눈썹펌",
+      "#liftensions", "#hybridlash", "#lashlift", "#koreanlash", "#lashextensions",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "17",
+        title: "연장 후 펌이\n한국에서 나온 이유",
+        subtitle: "LIFTENSIONS — 둘을 하나로 묶는 설계",
+        en: "LIFTENSIONS — why it started here",
+      },
+      {
+        kind: "point",
+        title: "속눈썹부터 다릅니다",
+        body: "한국 손님 속눈썹은 굵고 곧게 자라는 경우가 많습니다. 아래를 향해 자라기도 합니다. 눈 위에서 보면 길이가 있어도 잘 보이지 않습니다.",
+        en: "Straighter, thicker lashes that often grow downward.",
+      },
+      {
+        kind: "point",
+        title: "길이만 더하면",
+        body: "곧은 속눈썹에 길이를 더하면 무게가 앞으로 쏠립니다. 정면에서는 길어 보이는데 눈매는 오히려 처져 보이는 일이 생깁니다.",
+        en: "Add length to a straight lash and the weight pulls it down.",
+      },
+      {
+        kind: "point",
+        title: "컬만 넣으면",
+        body: "펌으로 방향은 살아나지만 원래 있던 만큼만 보입니다. 숱이 적은 분은 시술을 했는데도 허전하다고 느끼십니다.",
+        en: "A lift lifts what is there. If it is sparse, it stays sparse.",
+      },
+      {
+        kind: "point",
+        title: "그래서 둘을 묶습니다",
+        body: "펌으로 방향과 각도를 정리하고, 연장으로 길이와 숱을 채웁니다. 하나의 디자인 안에서 역할을 나누면 무겁지도 허전하지도 않습니다.",
+        en: "The lift sets direction. The extension fills it in.",
+      },
+      {
+        kind: "point",
+        title: "해외에서 묻는 이유",
+        body: "티 나는 결과보다 자연스러운 결과를 찾는 손님이 늘고 있습니다. 밖에서 오신 원장님들이 가장 먼저 물어보시는 것도 이 부분입니다.",
+        en: "Artists abroad ask about this first — the natural finish.",
+      },
+      {
+        kind: "close",
+        title: "기술이 아니라 설계입니다",
+        body: "두 가지를 다 할 줄 아는 것과, 한 사람 눈에 맞게 나눠 쓰는 것은 다릅니다. 그 나누는 기준을 가르칩니다.",
+        en: "Knowing both is one thing. Dividing the work is another.",
+      },
+    ],
+  },
+  {
     id: "why-build-glue",
     caption: `글루를 직접 만들게 된 이유.
 
@@ -314,47 +383,55 @@ I started teaching. Then I had to build the product.`,
     ],
   },
   {
-    id: "result-speaks",
-    caption: `잘 나온 눈매 하나가 백 마디보다 낫습니다.
+    id: "led-hybrid",
+    caption: `연장 후 펌에 LED를 더하면 달라지는 것.
 
-결과는 시술 직후가 아니라 3주 뒤에 판단합니다.
+펌 직후의 속눈썹은 평소와 표면이 다릅니다.
+그 위에 붙일 때 원하는 순간에 굳게 만들 수 있으면
+붙는 힘과 컬 방향을 같이 잡을 수 있습니다.
 
-One good set says more than a hundred words. Judge it at week three.`,
+Adding LED to the lift-and-extension design.`,
     hashtags: [
-      "#속눈썹연장", "#LED속눈썹연장", "#눈매디자인", "#청담속눈썹", "#아이디자인",
-      "#eyelashextensions", "#lashdesign", "#koreanlash", "#ledlash", "#eyedesign",
+      "#LED속눈썹연장", "#연장후펌", "#하이브리드래쉬", "#속눈썹교육", "#유지력",
+      "#ledlash", "#hybridlash", "#lashlift", "#koreanlash", "#lashtraining",
     ],
     slides: [
       {
         kind: "cover",
-        photo: "17",
-        title: "결과로\n말합니다",
-        subtitle: "3주 뒤에 보는 눈매",
-        en: "Judged at week three",
+        photo: "02",
+        title: "LED를 더하면\n무엇이 달라지나",
+        subtitle: "연장 후 펌과 LED가 만나는 자리",
+        en: "What LED changes in a hybrid design",
       },
       {
         kind: "point",
-        title: "한 올씩 봅니다",
-        body: "손님 속눈썹 하나에 하나씩. 간격과 방향이 흐트러지면 아무리 예뻐도 오래 못 갑니다.",
-        en: "One extension per natural lash. Spacing and direction decide the rest.",
+        title: "펌 직후가 관건입니다",
+        body: "펌을 하고 나면 속눈썹 표면 상태가 평소와 다릅니다. 이 상태에서 붙일 때 굳는 속도를 내가 정할 수 있으면 손이 급해지지 않습니다.",
+        en: "Right after a lift, the surface is different. Control the cure and you stop rushing.",
       },
       {
         kind: "point",
-        title: "빛으로 굳힙니다",
-        body: "LED는 빨리 굳히는 게 아니라 원하는 순간에 굳게 만드는 방식입니다. 램프와의 거리와 시간이 기준입니다.",
-        en: "LED is not about speed. It is about curing on your terms.",
+        title: "원하는 순간에 굳힙니다",
+        body: "빛을 비추기 전까지는 자리를 다시 잡을 수 있습니다. 방향을 확인하고 굳히면 컬이 서로 다른 쪽을 보는 일이 줄어듭니다.",
+        en: "Until the light comes, you can still adjust.",
       },
       {
         kind: "point",
-        title: "얼굴에서 봅니다",
-        body: "눈만 보고 만든 디자인은 눈만 예쁩니다. 얼굴 전체에서 눈이 어떤 무게를 갖는지가 인상을 정합니다.",
-        en: "A design made for the eye alone flatters only the eye.",
+        title: "붙는 힘과 방향을 같이",
+        body: "펌으로 잡아둔 각도를 유지한 채로 붙일 수 있으니, 유지력과 디자인을 따로 계산하지 않아도 됩니다.",
+        en: "Hold the angle you set with the lift, and bond at the same time.",
+      },
+      {
+        kind: "point",
+        title: "대신 기준이 하나 늘어납니다",
+        body: "램프와의 거리, 시간, 글루의 양이 서로 물려 있습니다. 셋 중 하나만 바뀌어도 결과가 달라지니 조건을 함께 봐야 합니다.",
+        en: "Distance, time, and adhesive amount move together.",
       },
       {
         kind: "close",
-        title: "오래가는 것이 실력입니다",
-        body: "손님이 다시 오시는 이유를 물어보면 오래 간다는 말이 먼저 나옵니다. 그래서 저는 끝난 직후가 아니라 3주 뒤를 보고 판단합니다.",
-        en: "They come back for how long it lasts. So that is what I look at.",
+        title: "어렵지는 않습니다",
+        body: "원리를 한 번 잡아두면 손이 기억합니다. 저는 이 순서를 정리하는 데 몇 해가 걸렸는데, 배우시는 분들은 훨씬 빨리 가십니다.",
+        en: "It took me years to order this. It takes my students far less.",
       },
     ],
   },
@@ -774,6 +851,7 @@ REFRAME — an eye design system built on facial structure diagnosis.`,
       {
         kind: "cover",
         photo: "73",
+        textTop: true,
         title: "눈만 보면\n디자인이 안 나옵니다",
         subtitle: "REFRAME — 골격에서 시작하는 아이디자인",
         en: "REFRAME — Eye design starts with the face",

@@ -21,6 +21,7 @@ function Frame({
   photoSrc,
   photoPosition,
   splitPhoto,
+  textTop,
   top,
   middle,
   bottom,
@@ -32,6 +33,8 @@ function Frame({
   photoPosition?: "top" | "center" | "bottom";
   /** 사진을 배경으로 깔지 않고 위쪽에 따로 앉힌다 */
   splitPhoto?: boolean;
+  /** 글자를 위쪽에 앉히고, 사진의 아래쪽을 비워 보여준다 */
+  textTop?: boolean;
   top: React.ReactNode;
   middle: React.ReactNode;
   bottom: React.ReactNode;
@@ -49,7 +52,9 @@ function Frame({
         ...(photoSrc && !splitPhoto
           ? {
               // 사진 위에 어두운 막을 겹쳐야 글자가 읽힌다. 두 겹을 한 번에 준다.
-              backgroundImage: `linear-gradient(to bottom, rgba(20,17,15,0.10) 0%, rgba(20,17,15,0.30) 35%, rgba(20,17,15,0.72) 62%, rgba(20,17,15,0.94) 100%), url(${photoSrc})`,
+              backgroundImage: textTop
+                ? `linear-gradient(to bottom, rgba(20,17,15,0.90) 0%, rgba(20,17,15,0.66) 42%, rgba(20,17,15,0.20) 66%, rgba(20,17,15,0.16) 86%, rgba(20,17,15,0.52) 100%), url(${photoSrc})`
+                : `linear-gradient(to bottom, rgba(20,17,15,0.10) 0%, rgba(20,17,15,0.30) 35%, rgba(20,17,15,0.72) 62%, rgba(20,17,15,0.94) 100%), url(${photoSrc})`,
               backgroundSize: "cover",
               backgroundPosition: photoPosition ?? "center",
             }
@@ -83,7 +88,7 @@ function Frame({
             display: "flex",
             flexDirection: "column",
             flexGrow: 1,
-            justifyContent: align,
+            justifyContent: textTop ? "flex-start" : align,
             paddingTop: splitPhoto ? 28 : 48,
             paddingBottom: splitPhoto ? 20 : 48,
           }}
@@ -195,6 +200,7 @@ export function renderSlide(
         photoSrc={slide.photo ? photoUrl(origin, slide.photo) : undefined}
         photoPosition={slide.photoPosition}
         splitPhoto={coverSplit}
+        textTop={slide.textTop}
         align="flex-end"
         top={
           <div style={{ display: "flex", flexDirection: "column" }}>
