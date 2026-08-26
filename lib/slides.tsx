@@ -121,7 +121,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
   if (slide.kind === "cover") {
     return (
       <Frame
-        bg={C.ink}
+        bg={C.deep}
         align="flex-end"
         top={
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -131,7 +131,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
                 display: "flex",
                 fontSize: T.caption,
                 letterSpacing: 4,
-                color: C.muted,
+                color: C.mutedOnDeep,
                 marginTop: 28,
               }}
             >
@@ -141,12 +141,26 @@ export function renderSlide(slide: Slide, index: number, total: number) {
         }
         middle={
           <div style={{ display: "flex", flexDirection: "column" }}>
+            {/* 영문이 한글보다 위에 온다. 해외 계정이 스쳐도 주제가 먼저 읽혀야 한다 */}
+            {slide.en ? (
+              <div
+                style={{
+                  display: "flex",
+                  fontSize: T.heroEn,
+                  color: C.accent,
+                  letterSpacing: 1,
+                  marginBottom: 22,
+                }}
+              >
+                {slide.en}
+              </div>
+            ) : null}
             <div
               style={{
                 display: "flex",
                 fontSize: T.hero,
                 fontWeight: 700,
-                color: C.onInk,
+                color: C.onDeep,
                 lineHeight: 1.22,
                 whiteSpace: "pre-line",
               }}
@@ -158,7 +172,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
                 style={{
                   display: "flex",
                   fontSize: T.body,
-                  color: C.muted,
+                  color: C.mutedOnDeep,
                   marginTop: 36,
                 }}
               >
@@ -168,7 +182,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
           </div>
         }
         bottom={
-          <Bottom en={slide.en} enColor={C.accent} footColor={C.muted} page={page} />
+          <Bottom enColor={C.accent} footColor={C.mutedOnDeep} page={page} />
         }
       />
     );
@@ -177,7 +191,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
   if (slide.kind === "point") {
     return (
       <Frame
-        bg={C.paper}
+        bg={C.nude}
         align="center"
         top={
           <div
@@ -199,7 +213,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
                 display: "flex",
                 fontSize: T.title,
                 fontWeight: 700,
-                color: C.onPaper,
+                color: C.onNude,
                 lineHeight: 1.28,
               }}
             >
@@ -209,7 +223,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
               style={{
                 display: "flex",
                 fontSize: T.body,
-                color: C.onPaper,
+                color: C.onNude,
                 lineHeight: 1.62,
                 marginTop: 36,
               }}
@@ -227,7 +241,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
 
   return (
     <Frame
-      bg={C.ink}
+      bg={C.deep}
       align="center"
       top={<Rule />}
       middle={
@@ -237,7 +251,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
               display: "flex",
               fontSize: T.title,
               fontWeight: 700,
-              color: C.onInk,
+              color: C.onDeep,
               lineHeight: 1.28,
               whiteSpace: "pre-line",
             }}
@@ -248,7 +262,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
             style={{
               display: "flex",
               fontSize: T.body,
-              color: C.muted,
+              color: C.mutedOnDeep,
               lineHeight: 1.62,
               marginTop: 36,
             }}
@@ -258,7 +272,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
         </div>
       }
       bottom={
-        <Bottom en={slide.en} enColor={C.accent} footColor={C.muted} page={page} />
+        <Bottom en={slide.en} enColor={C.accent} footColor={C.mutedOnDeep} page={page} />
       }
     />
   );
