@@ -30,8 +30,8 @@ export interface CoverSlide {
 /**
  * 사진 한 장이 판을 채우는 슬라이드.
  *
- * 글로 설명하는 것보다 보여주는 게 빠를 때 쓴다. 교육 현장, 시술 결과, 공간처럼
- * "말로 하면 자랑이 되는 것"은 사진으로 두면 사실이 된다.
+ * 지금은 쓰지 않는다. 사진은 표지에만 두고 본문은 글로만 간다 — 섞으면 캐러셀 안이
+ * 어수선하고 피드에서도 통일감이 떨어진다는 판단이다. 타입은 남겨둔다.
  */
 export interface PhotoSlide {
   kind: "photo";
@@ -92,7 +92,7 @@ export const POSTS: Post[] = [
 
 거리를 재보셨나요?
 
-조사 거리 몇 센티가 유지력을 바꿉니다.
+램프를 몇 센티 떨어뜨리느냐가 유지력을 바꿉니다.
 LED 교육에서 가장 먼저 잡는 기준입니다.
 
 Before you blame the lamp — did you measure the distance?`,
@@ -105,19 +105,19 @@ Before you blame the lamp — did you measure the distance?`,
         kind: "cover",
         photo: "46",
         title: "램프를 바꾸기 전에\n거리를 재세요",
-        subtitle: "LED 경화의 첫 번째 기준",
+        subtitle: "빛으로 굳히는 일의 첫 번째 기준",
         en: "Measure the distance before blaming the lamp",
       },
       {
         kind: "point",
         title: "빛은 거리에 약합니다",
-        body: "조사 거리가 멀어지면 도달하는 광량이 급격히 떨어집니다. 같은 램프, 같은 시간인데 결과가 다른 이유가 대부분 여기 있습니다.",
+        body: "램프가 눈에서 멀어지면 닿는 빛의 양이 뚝 떨어집니다. 같은 램프로 같은 시간을 쬐었는데 결과가 다른 이유가 대부분 여기 있습니다.",
         en: "Light intensity drops sharply with distance.",
       },
       {
         kind: "point",
         title: "시간으로 못 메웁니다",
-        body: "거리가 멀어서 덜 굳은 것을 오래 쬐어서 해결하려 하면, 겉만 굳고 속은 덜 굳은 상태가 됩니다. 그 접착은 3주를 못 넘깁니다.",
+        body: "멀어서 덜 굳은 것을 오래 쬐어 메우려 하면 겉만 굳고 속은 덜 굳습니다. 그렇게 붙은 것은 3주를 못 넘깁니다.",
         en: "Longer exposure does not fix wrong distance.",
       },
       {
@@ -146,7 +146,7 @@ Before you blame the lamp — did you measure the distance?`,
 
 펌을 먼저 가는 방식에도 분명한 장점이 있습니다.
 다만 시술 뒤 관리 과정에서 컬이 돌아오는 일이 생기고,
-약제가 자모에 무엇을 남기는지 모른 채 하면 유지력이 먼저 떨어집니다.
+펌 약이 손님 속눈썹에 무엇을 남기는지 모른 채 하면 유지력이 먼저 떨어집니다.
 
 제가 순서를 나눠 쓰는 건 기술이 좋아서가 아니라,
 같은 손님을 3주 뒤에 다시 보면서 알게 된 것들 때문입니다.
@@ -173,25 +173,25 @@ Neither order is wrong. What changes is what happens after.`,
       {
         kind: "point",
         title: "펌을 먼저 가면",
-        body: "컬과 방향을 먼저 잡아두니 디자인이 예측됩니다. 자모가 처져 있거나 방향이 제각각인 눈에는 이쪽이 편합니다. 완성 그림이 흔들리지 않습니다.",
+        body: "컬과 방향을 먼저 잡아두니 완성 그림이 예측됩니다. 손님 속눈썹이 아래로 처져 있거나 방향이 제각각인 눈에는 이쪽이 편합니다.",
         en: "Lift first gives you a predictable shape to build on.",
       },
       {
         kind: "point",
         title: "대신 컬이 돌아옵니다",
-        body: "펌 직후에는 예뻤는데 관리 과정에서 컬이 서서히 원래 방향으로 돌아오는 일이 있습니다. 그 위에 붙여둔 가모가 같이 방향을 잃으면서 처음 디자인과 달라집니다.",
+        body: "펌 직후에는 예뻤는데 지내다 보면 컬이 서서히 원래 방향으로 돌아오는 일이 있습니다. 그 위에 붙여둔 속눈썹이 같이 방향을 잃으면서 처음 모양과 달라집니다.",
         en: "The curl can relax back, and the extensions drift with it.",
       },
       {
         kind: "point",
         title: "약제가 무엇을 남기는지",
-        body: "펌 약제는 자모의 결합을 끊었다가 다시 붙이는 과정입니다. 그 직후 자모 표면은 평소와 다른 상태입니다. 이걸 모른 채 바로 붙이면 접착이 약해지고, 유지력이 기술보다 먼저 떨어집니다.",
+        body: "펌은 속눈썹 안쪽 결합을 한 번 끊었다가 다시 붙이는 과정입니다. 그래서 펌 직후의 속눈썹 표면은 평소와 다릅니다. 이걸 모르고 바로 붙이면 붙는 힘이 약해져서, 손보다 유지력이 먼저 무너집니다.",
         en: "The lash surface right after a lift is not the surface you usually bond to.",
       },
       {
         kind: "point",
         title: "연장을 먼저 가면",
-        body: "자모 방향이 나쁘지 않고 길이와 밀도가 부족한 경우입니다. 뼈대를 먼저 세우고 마지막에 컬을 정리하면 돌아옴이 덜합니다. 대신 처음 설계가 더 정확해야 합니다.",
+        body: "손님 속눈썹 방향은 괜찮은데 길이와 숱이 부족한 경우입니다. 먼저 뼈대를 세우고 마지막에 컬을 정리하면 돌아옴이 덜합니다. 대신 처음 설계가 더 정확해야 합니다.",
         en: "Extension first drifts less, but the plan has to be right from the start.",
       },
       {
@@ -203,7 +203,7 @@ Neither order is wrong. What changes is what happens after.`,
       {
         kind: "close",
         title: "고를 수 있으면 됩니다",
-        body: "어느 쪽이 옳다는 이야기가 아닙니다. 고객의 자모와 생활을 보고 둘 중에 고를 수 있으면 됩니다. 그 판단 기준을 만드는 게 교육에서 하는 일입니다.",
+        body: "어느 쪽이 옳다는 이야기가 아닙니다. 손님의 속눈썹 상태와 생활을 보고 둘 중에 고를 수 있으면 됩니다. 그 기준을 만드는 게 교육에서 하는 일입니다.",
         en: "The goal is not one right order. It is being able to choose.",
       },
     ],
@@ -232,7 +232,7 @@ Save this and check your sequence on the next set.`,
       {
         kind: "point",
         title: "전처리가 반이다",
-        body: "유분이 남은 자리에 붙인 가모는 아무리 좋은 글루를 써도 3주를 못 갑니다. 시술 전 세정과 완전 건조까지가 접착의 시작입니다.",
+        body: "기름기가 남은 자리에 붙이면 아무리 좋은 글루를 써도 3주를 못 갑니다. 시술 전에 닦고 완전히 말리는 것까지가 붙이는 일의 시작입니다.",
         en: "Cleansing and full drying is where adhesion begins.",
       },
       {
@@ -243,25 +243,25 @@ Save this and check your sequence on the next set.`,
       },
       {
         kind: "point",
-        title: "접착면 1.5mm",
-        body: "가모가 자모를 감싸는 길이가 1.5mm 아래로 떨어지면 버티지 못합니다. 뿌리에서 0.5mm 띄우고, 닿는 면을 충분히 확보하세요.",
+        title: "닿는 면 1.5mm",
+        body: "붙이는 속눈썹이 손님 속눈썹에 닿아 있는 길이가 1.5mm 아래로 떨어지면 버티지 못합니다. 뿌리에서 0.5mm 띄우되 닿는 면은 넉넉히 잡습니다.",
         en: "Keep at least 1.5mm of contact along the natural lash.",
       },
       {
         kind: "point",
         title: "무게를 계산하세요",
-        body: "자모 굵기에 비해 가모가 무거우면 붙어 있어도 자모가 먼저 빠집니다. 고객의 자모 상태가 곧 디자인의 상한선입니다.",
+        body: "손님 속눈썹 굵기에 비해 붙이는 속눈썹이 무거우면, 잘 붙어 있어도 원래 속눈썹이 먼저 빠집니다. 손님 속눈썹 상태가 곧 디자인의 한계선입니다.",
         en: "The client's natural lash sets the ceiling for your design.",
       },
       {
         kind: "point",
-        title: "홈케어까지가 시술",
+        title: "집에 가서가 진짜 시작",
         body: "가장 많이 빠지는 구간은 시술 후 24시간입니다. 무엇을 하지 말아야 하는지 말로만 하지 말고 카드로 쥐여 보내세요.",
         en: "The first 24 hours decide retention. Send them home with a card.",
       },
       {
         kind: "close",
-        title: "리텐션은 재능이 아닙니다",
+        title: "오래 가는 건 타고나는 게 아닙니다",
         body: "타고난 손이 아니라 순서에서 갈립니다. 기준을 하나씩 잡으면 유지 기간이 눈에 띄게 달라집니다.",
         en: "Retention comes from sequence, not from gifted hands.",
       },
@@ -327,28 +327,25 @@ One good set says more than a hundred words. Judge it at week three.`,
     slides: [
       {
         kind: "cover",
-        photo: "73",
+        photo: "17",
         title: "결과로\n말합니다",
         subtitle: "3주 뒤에 보는 눈매",
         en: "Judged at week three",
       },
       {
-        kind: "photo",
-        photo: "74",
+        kind: "point",
         title: "한 올씩 봅니다",
-        body: "자모 하나에 가모 하나. 간격과 방향이 흐트러지면 아무리 예뻐도 오래 못 갑니다.",
+        body: "손님 속눈썹 하나에 하나씩. 간격과 방향이 흐트러지면 아무리 예뻐도 오래 못 갑니다.",
         en: "One extension per natural lash. Spacing and direction decide the rest.",
       },
       {
-        kind: "photo",
-        photo: "72",
+        kind: "point",
         title: "빛으로 굳힙니다",
-        body: "LED는 빨리 굳는 게 아니라 원하는 때에 굳게 만드는 기술입니다. 조사 거리와 시간이 기준입니다.",
+        body: "LED는 빨리 굳히는 게 아니라 원하는 순간에 굳게 만드는 방식입니다. 램프와의 거리와 시간이 기준입니다.",
         en: "LED is not about speed. It is about curing on your terms.",
       },
       {
-        kind: "photo",
-        photo: "71",
+        kind: "point",
         title: "얼굴에서 봅니다",
         body: "눈만 보고 만든 디자인은 눈만 예쁩니다. 얼굴 전체에서 눈이 어떤 무게를 갖는지가 인상을 정합니다.",
         en: "A design made for the eye alone flatters only the eye.",
@@ -382,15 +379,13 @@ Teaching is the hardest part. What I teach gets repeated every day, by others.`,
         en: "Why teaching is the hardest part",
       },
       {
-        kind: "photo",
-        photo: "41",
+        kind: "point",
         title: "설명할 수 있어야 기술입니다",
         body: "손으로는 되는데 말로 안 되는 건 아직 기술이 아니라 습관입니다. 가르치려면 순서를 글로 만들어야 합니다.",
         en: "If you cannot explain it, it is a habit, not a technique.",
       },
       {
-        kind: "photo",
-        photo: "75",
+        kind: "point",
         title: "매번 새로 씁니다",
         body: "같은 과정이어도 오는 분들이 다릅니다. 어디서 막히는지가 다르니 그때마다 자료를 고칩니다.",
         en: "Same course, different people. The material changes every time.",
@@ -402,8 +397,7 @@ Teaching is the hardest part. What I teach gets repeated every day, by others.`,
         en: "It ends when it works in their own studio, not mine.",
       },
       {
-        kind: "photo",
-        photo: "11",
+        kind: "point",
         title: "그래서 계속합니다",
         body: "잘 나왔다고 사진 보내주시는 분들이 있습니다. 그 순간이 제일 좋습니다.",
         en: "They send me photos when it works. That is the best part.",
@@ -497,7 +491,7 @@ The best lash artists spend three minutes before they touch a single lash.`,
       {
         kind: "point",
         title: "안 되는 것을 먼저 말합니다",
-        body: "자모가 얇으면 원하는 볼륨이 안 나온다고 시술 전에 말해야 합니다. 끝나고 말하면 변명이 되고, 먼저 말하면 전문성이 됩니다.",
+        body: "손님 속눈썹이 얇으면 원하는 만큼 풍성해지기 어렵다는 걸 시술 전에 말씀드립니다. 끝나고 말하면 변명이 되고, 먼저 말하면 설명이 됩니다.",
         en: "Say what is impossible before you start, not after.",
       },
       {
@@ -537,8 +531,8 @@ It is not the technique. It is the standard.`,
       },
       {
         kind: "point",
-        title: "자모를 먼저 봅니다",
-        body: "디자인을 정하고 자모를 맞추는 것이 아니라, 자모를 보고 가능한 디자인을 정합니다. 순서가 반대입니다.",
+        title: "손님 속눈썹을 먼저 봅니다",
+        body: "디자인을 정해두고 거기에 속눈썹을 맞추는 게 아니라, 손님 속눈썹을 보고 가능한 디자인을 정합니다.",
         en: "We read the natural lash first, then decide the design.",
       },
       {
@@ -550,7 +544,7 @@ It is not the technique. It is the standard.`,
       {
         kind: "point",
         title: "유지 기간이 기준",
-        body: "끝난 직후의 사진이 아니라 3주 뒤의 모습으로 실력을 판단합니다. 그래서 리텐션 교육이 기본 과정에 들어갑니다.",
+        body: "끝난 직후 사진이 아니라 3주 뒤 모습으로 판단합니다. 그래서 오래 가게 만드는 법이 기본 과정에 들어갑니다.",
         en: "We judge the work at week three, not on day one.",
       },
       {
@@ -592,7 +586,7 @@ What I learned from the judge's seat: consistency wins, not flash.`,
       {
         kind: "point",
         title: "간격이 실력입니다",
-        body: "가모 사이의 간격, 뿌리에서 띄운 거리, 방향의 일관성. 이 셋이 흔들리면 아무리 예쁜 디자인도 완성도에서 감점됩니다.",
+        body: "속눈썹 사이 간격, 뿌리에서 띄운 거리, 방향이 고른가. 이 셋이 흔들리면 아무리 예쁜 디자인도 점수가 깎입니다.",
         en: "Spacing, root distance, direction. Three things that never lie.",
       },
       {
@@ -667,7 +661,7 @@ Technique → Education → Product → Competition → Contents → Branding`,
     caption: `노글루 리프트를 왜 "한국식"이라고 부르는가.
 
 2018년부터 전국을 돌며 가르쳤습니다.
-같은 기술을 그대로 들여오면 한국 고객의 모질에서 결과가 달랐기 때문입니다.
+밖에서 배운 방식을 그대로 쓰면 한국 손님 속눈썹에서는 결과가 달랐기 때문입니다.
 
 Why we call it the Korean method — the hair itself is different.`,
     hashtags: [
@@ -684,8 +678,8 @@ Why we call it the Korean method — the hair itself is different.`,
       },
       {
         kind: "point",
-        title: "모질이 다릅니다",
-        body: "한국인의 자모는 굵고 곧게 자라는 경우가 많습니다. 서양 기준의 시간과 약제를 그대로 쓰면 컬이 덜 잡히거나 반대로 상합니다.",
+        title: "속눈썹부터 다릅니다",
+        body: "한국 사람 속눈썹은 굵고 곧게 자라는 경우가 많습니다. 밖에서 쓰던 시간과 약을 그대로 쓰면 컬이 덜 잡히거나 반대로 상합니다.",
         en: "Straighter, thicker hair does not respond to imported timing.",
       },
       {
@@ -697,7 +691,7 @@ Why we call it the Korean method — the hair itself is different.`,
       {
         kind: "point",
         title: "손상 관리가 기술입니다",
-        body: "한 번 잘 나온 컬보다 다음 시술까지 자모가 버티는 게 중요합니다. 모질별로 시간과 약제를 나누는 기준이 필요합니다.",
+        body: "한 번 잘 나온 컬보다 다음에 오실 때까지 속눈썹이 버텨주는 게 중요합니다. 속눈썹 상태에 따라 시간과 약을 나누는 기준이 필요합니다.",
         en: "What matters is whether the lash survives until the next visit.",
       },
       {
@@ -730,12 +724,6 @@ From Cheongdam to Shanghai — technique, education, product, salon as one.`,
         en: "From Cheongdam to Shanghai",
       },
       {
-        kind: "photo",
-        photo: "12",
-        position: "top",
-        en: "Maeil Business Newspaper, August 2026",
-      },
-      {
         kind: "point",
         title: "기사가 먼저 알렸습니다",
         body: "위닛 아이디자인을 시술 브랜드가 아니라 교육·제품·콘텐츠와 살롱을 잇는 브랜드로 키운다는 계획이 매일경제에 실렸습니다.",
@@ -748,8 +736,7 @@ From Cheongdam to Shanghai — technique, education, product, salon as one.`,
         en: "Technique alone travels once. A system travels further.",
       },
       {
-        kind: "photo",
-        photo: "05",
+        kind: "point",
         title: "교육이 먼저 갑니다",
         body: "현지 아티스트가 같은 기준으로 시술할 수 있어야 브랜드가 유지됩니다. 그래서 살롱보다 교육이 앞섭니다.",
         en: "Education goes first, then the salon.",
@@ -786,7 +773,7 @@ REFRAME — an eye design system built on facial structure diagnosis.`,
     slides: [
       {
         kind: "cover",
-        photo: "17",
+        photo: "73",
         title: "눈만 보면\n디자인이 안 나옵니다",
         subtitle: "REFRAME — 골격에서 시작하는 아이디자인",
         en: "REFRAME — Eye design starts with the face",
@@ -800,7 +787,7 @@ REFRAME — an eye design system built on facial structure diagnosis.`,
       {
         kind: "point",
         title: "여섯 가지를 봅니다",
-        body: "얼굴 골격과 비율, 눈의 위치와 형태, 눈썹과 눈의 관계, 자모의 방향·길이·밀도, 지금 가지고 있는 이미지, 그리고 원하는 인상.",
+        body: "얼굴 골격과 비율, 눈의 위치와 모양, 눈썹과 눈 사이, 속눈썹의 방향과 길이와 숱, 지금 주는 인상, 그리고 원하는 인상.",
         en: "Six inputs: bone structure, eye position, brow relation, lash condition, current image, desired impression.",
       },
       {
