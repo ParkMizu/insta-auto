@@ -12,12 +12,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* 미리보기는 항상 밝게 둔다. 인스타 앱이 밝은 배경이라,
+   다크로 뒤집히면 검정 표지가 배경에 묻혀 실제 느낌과 달라진다. */
 
 body {
   background: var(--background);

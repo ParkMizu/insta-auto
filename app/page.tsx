@@ -1,69 +1,90 @@
-import Image from "next/image";
+/**
+ * 미리보기 화면 — 원장님이 결과를 눈으로 확인하는 곳이다.
+ *
+ * 위: 피드에 깔렸을 때의 모습 (인스타 프로필처럼 3열)
+ * 아래: 글마다 캐러셀 전체를 옆으로 넘겨보는 영역
+ */
+import { BRAND } from "@/content/brand";
+import { schedule } from "@/lib/queue";
 
-export default function Home() {
+export const metadata = { title: "피드 미리보기" };
+
+function slideUrl(postId: string, index: number) {
+  return `/api/slide/${postId}/${index}`;
+}
+
+export default function PreviewPage() {
+  const queue = schedule();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="mx-auto max-w-5xl px-6 py-14">
+      <header className="mb-12">
+        <h1 className="text-3xl font-bold tracking-tight">피드 미리보기</h1>
+        <p className="mt-3 text-neutral-500">
+          {BRAND.handle} · 캐러셀 {queue.length}개가 큐에 있습니다. 매일 오전 8시에
+          위에서부터 하나씩 나갑니다. {queue.length ? `첫 글은 ${queue[0].date}, 마지막은 ${queue[queue.length - 1].date}입니다.` : ""}
+        </p>
+      </header>
+
+      <section className="mb-16">
+        <h2 className="mb-4 text-sm font-semibold uppercase tracking-widest text-neutral-400">
+          프로필에서 보이는 모습
+        </h2>
+        <div className="grid grid-cols-3 gap-1 rounded-lg bg-neutral-100 p-1">
+          {queue.map(({ post }) => (
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              key={post.id}
+              href={`#${post.id}`}
+              className="relative block aspect-[4/5] overflow-hidden bg-neutral-200"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              {/* 표지(0번)가 곧 피드 썸네일이다 */}
+              <img
+                src={slideUrl(post.id, 0)}
+                alt={post.id}
+                className="h-full w-full object-cover"
+              />
+            </a>
+          ))}
+          {/* 큐가 9칸을 못 채우면 빈 자리를 보여줘서 얼마나 더 필요한지 눈에 띄게 한다 */}
+          {Array.from({ length: Math.max(0, 9 - queue.length) }).map((_, i) => (
+            <div
+              key={`empty-${i}`}
+              className="flex aspect-[4/5] items-center justify-center bg-neutral-50 text-xs text-neutral-300"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              비어 있음
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {queue.map(({ post, date }, order) => (
+        <section key={post.id} id={post.id} className="mb-20 scroll-mt-8">
+          <div className="mb-4 flex items-baseline justify-between gap-4">
+            <h2 className="text-lg font-semibold">
+              {order + 1}번째 · {date} 오전 8시 · {post.slides.length}장
+            </h2>
+            <code className="text-xs text-neutral-400">{post.id}</code>
+          </div>
+
+          <div className="flex gap-3 overflow-x-auto pb-3">
+            {post.slides.map((_, i) => (
+              <img
+                key={i}
+                src={slideUrl(post.id, i)}
+                alt={`${post.id} ${i + 1}`}
+                className="w-56 shrink-0 rounded-md border border-neutral-200"
+              />
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-lg bg-neutral-50 p-5">
+            <p className="whitespace-pre-line text-sm leading-relaxed text-neutral-700">
+              {post.caption}
+            </p>
+            <p className="mt-4 text-sm text-blue-600">{post.hashtags.join(" ")}</p>
+          </div>
+        </section>
+      ))}
+    </main>
   );
 }
