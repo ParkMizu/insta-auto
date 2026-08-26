@@ -151,57 +151,56 @@ and help set the standard it's judged by.`,
     ],
   },
   {
-    id: "reframe-intro",
-    caption: `눈만 보면 디자인이 안 나옵니다.
+    id: "led-distance",
+    caption: `LED 글루가 안 굳는다고 램프를 바꾸기 전에.
 
-같은 눈매인데 어울리는 디자인이 다른 이유는 얼굴이 다르기 때문입니다.
-그래서 골격진단을 아이디자인에 가져왔습니다.
+거리를 재보셨나요?
 
-리프레임(REFRAME)은 속눈썹의 컬·길이·밀도를 고르는 메뉴가 아니라,
-눈을 중심으로 인상을 다시 설계하는 시스템입니다.
+조사 거리 몇 센티가 유지력을 바꿉니다.
+LED 교육에서 가장 먼저 잡는 기준입니다.
 
-REFRAME — an eye design system built on facial structure diagnosis.`,
+Before you blame the lamp — did you measure the distance?`,
     hashtags: [
-      "#리프레임", "#아이디자인", "#골격진단", "#눈매교정", "#속눈썹디자인",
-      "#reframe", "#eyedesign", "#koreanlash", "#facialbalance", "#lashdesign",
+      "#LED속눈썹연장", "#LED래쉬", "#속눈썹연장", "#속눈썹교육", "#유지력",
+      "#ledlash", "#lashextensions", "#lashtraining", "#koreanlash", "#lashtech",
     ],
     slides: [
       {
         kind: "cover",
-        photo: "03",
-        title: "눈만 보면\n디자인이 안 나옵니다",
-        subtitle: "REFRAME — 골격에서 시작하는 아이디자인",
-        en: "REFRAME — Eye design starts with the face",
+        photo: "18",
+        title: "램프를 바꾸기 전에\n거리를 재세요",
+        subtitle: "LED 경화의 첫 번째 기준",
+        en: "Measure the distance before blaming the lamp",
       },
       {
         kind: "point",
-        title: "왜 얼굴까지 보는가",
-        body: "같은 눈매에 같은 디자인을 해도 어울리는 사람과 아닌 사람이 갈립니다. 눈은 얼굴 안에 있고, 인상은 눈 하나가 아니라 비율이 만들기 때문입니다.",
-        en: "The eye sits inside a face. Impression comes from proportion.",
+        title: "빛은 거리에 약합니다",
+        body: "조사 거리가 멀어지면 도달하는 광량이 급격히 떨어집니다. 같은 램프, 같은 시간인데 결과가 다른 이유가 대부분 여기 있습니다.",
+        en: "Light intensity drops sharply with distance.",
       },
       {
         kind: "point",
-        title: "여섯 가지를 봅니다",
-        body: "얼굴 골격과 비율, 눈의 위치와 형태, 눈썹과 눈의 관계, 자모의 방향·길이·밀도, 지금 가지고 있는 이미지, 그리고 원하는 인상.",
-        en: "Six inputs: bone structure, eye position, brow relation, lash condition, current image, desired impression.",
+        title: "시간으로 못 메웁니다",
+        body: "거리가 멀어서 덜 굳은 것을 오래 쬐어서 해결하려 하면, 겉만 굳고 속은 덜 굳은 상태가 됩니다. 그 접착은 3주를 못 넘깁니다.",
+        en: "Longer exposure does not fix wrong distance.",
       },
       {
         kind: "point",
-        title: "순서가 정해져 있습니다",
-        body: "골격 분석 → 눈과 얼굴 밸런스 진단 → 이미지 상담 → 디자인 설계 → 기술 선택 → 시술. 감각이 아니라 순서를 따릅니다.",
-        en: "Analysis → Diagnosis → Counseling → Planning → Technique → Design.",
+        title: "글루량이 변수를 키웁니다",
+        body: "글루가 많으면 속까지 빛이 못 들어갑니다. 거리를 맞춰도 양이 과하면 같은 문제가 반복됩니다. 거리와 양은 같이 봐야 합니다.",
+        en: "Too much adhesive blocks the light from reaching the core.",
       },
       {
         kind: "point",
-        title: "기술은 마지막에 고릅니다",
-        body: "LED 연장, 래쉬 리프트, 하이브리드 중 무엇을 쓸지는 진단이 끝난 뒤에 정합니다. 기술을 먼저 정하고 얼굴을 맞추면 순서가 거꾸로입니다.",
-        en: "The technique is chosen after the diagnosis, never before.",
+        title: "환경이 바뀌면 기준도 바뀝니다",
+        body: "계절이 바뀌어 온습도가 달라지면 같은 거리에서도 결과가 달라집니다. 숫자를 외우는 게 아니라 조건을 읽는 법을 배워야 합니다.",
+        en: "Learn to read conditions, not memorize numbers.",
       },
       {
         kind: "close",
-        title: "감각을 시스템으로",
-        body: "잘하는 사람의 감을 배울 수는 없지만, 순서는 배울 수 있습니다. 리프레임은 그 순서를 글로 만든 것입니다.",
-        en: "You cannot copy instinct. You can copy a system.",
+        title: "LED는 감이 아닙니다",
+        body: "광경화 원리를 알면 문제가 생겼을 때 어디를 볼지 알게 됩니다. 위닛 크루 LED 교육에서 이 기준부터 잡습니다.",
+        en: "Understand the curing, and you know where to look.",
       },
     ],
   },
@@ -261,108 +260,6 @@ The client's natural lash decides.`,
     ],
   },
   {
-    id: "led-distance",
-    caption: `LED 글루가 안 굳는다고 램프를 바꾸기 전에.
-
-거리를 재보셨나요?
-
-조사 거리 몇 센티가 유지력을 바꿉니다.
-LED 교육에서 가장 먼저 잡는 기준입니다.
-
-Before you blame the lamp — did you measure the distance?`,
-    hashtags: [
-      "#LED속눈썹연장", "#LED래쉬", "#속눈썹연장", "#속눈썹교육", "#유지력",
-      "#ledlash", "#lashextensions", "#lashtraining", "#koreanlash", "#lashtech",
-    ],
-    slides: [
-      {
-        kind: "cover",
-        photo: "18",
-        title: "램프를 바꾸기 전에\n거리를 재세요",
-        subtitle: "LED 경화의 첫 번째 기준",
-        en: "Measure the distance before blaming the lamp",
-      },
-      {
-        kind: "point",
-        title: "빛은 거리에 약합니다",
-        body: "조사 거리가 멀어지면 도달하는 광량이 급격히 떨어집니다. 같은 램프, 같은 시간인데 결과가 다른 이유가 대부분 여기 있습니다.",
-        en: "Light intensity drops sharply with distance.",
-      },
-      {
-        kind: "point",
-        title: "시간으로 못 메웁니다",
-        body: "거리가 멀어서 덜 굳은 것을 오래 쬐어서 해결하려 하면, 겉만 굳고 속은 덜 굳은 상태가 됩니다. 그 접착은 3주를 못 넘깁니다.",
-        en: "Longer exposure does not fix wrong distance.",
-      },
-      {
-        kind: "point",
-        title: "글루량이 변수를 키웁니다",
-        body: "글루가 많으면 속까지 빛이 못 들어갑니다. 거리를 맞춰도 양이 과하면 같은 문제가 반복됩니다. 거리와 양은 같이 봐야 합니다.",
-        en: "Too much adhesive blocks the light from reaching the core.",
-      },
-      {
-        kind: "point",
-        title: "환경이 바뀌면 기준도 바뀝니다",
-        body: "계절이 바뀌어 온습도가 달라지면 같은 거리에서도 결과가 달라집니다. 숫자를 외우는 게 아니라 조건을 읽는 법을 배워야 합니다.",
-        en: "Learn to read conditions, not memorize numbers.",
-      },
-      {
-        kind: "close",
-        title: "LED는 감이 아닙니다",
-        body: "광경화 원리를 알면 문제가 생겼을 때 어디를 볼지 알게 됩니다. 위닛 크루 LED 교육에서 이 기준부터 잡습니다.",
-        en: "Understand the curing, and you know where to look.",
-      },
-    ],
-  },
-  {
-    id: "judge-view",
-    tone: "deep",
-    caption: `심사위원석에서는 다르게 보입니다.
-
-싱가포르와 일본 NEEC에서 심사를 하고,
-한국 월드래쉬컵에서 LED 분과를 맡으면서 알게 된 것.
-
-점수는 화려함이 아니라 일관성에서 갈립니다.
-
-What I learned from the judge's seat: consistency wins, not flash.`,
-    hashtags: [
-      "#속눈썹대회", "#월드래쉬컵", "#래쉬아티스트", "#속눈썹교육", "#심사위원",
-      "#lashcompetition", "#lashjudge", "#lashartist", "#koreanlash", "#lashtraining",
-    ],
-    slides: [
-      {
-        kind: "cover",
-        title: "심사위원석에서는\n다르게 보입니다",
-        subtitle: "대회가 알려주는 실력의 기준",
-        en: "What the judge's seat teaches you",
-      },
-      {
-        kind: "point",
-        title: "화려함은 오래 못 갑니다",
-        body: "첫눈에 눈길을 끄는 작품이 점수에서 밀리는 일이 자주 있습니다. 심사는 가까이서 오래 봅니다. 그때 남는 건 균일함입니다.",
-        en: "Judges look closely, for a long time. Evenness is what survives.",
-      },
-      {
-        kind: "point",
-        title: "간격이 실력입니다",
-        body: "가모 사이의 간격, 뿌리에서 띄운 거리, 방향의 일관성. 이 셋이 흔들리면 아무리 예쁜 디자인도 완성도에서 감점됩니다.",
-        en: "Spacing, root distance, direction. Three things that never lie.",
-      },
-      {
-        kind: "point",
-        title: "디자인은 얼굴과 맞아야 합니다",
-        body: "모델 얼굴에 맞지 않는 디자인은 기술이 좋아도 설득이 안 됩니다. 대회에서도 결국 아이디자인이 평가됩니다.",
-        en: "A design that ignores the face cannot win, however clean.",
-      },
-      {
-        kind: "close",
-        title: "그래서 선수를 지도합니다",
-        body: "심사 기준을 아는 사람이 가르치면 결과가 달라집니다. 지도한 선수들이 여러 대회에서 1위를 했습니다.",
-        en: "Artists I've trained have taken first place, repeatedly.",
-      },
-    ],
-  },
-  {
     id: "retention-3weeks",
     caption: `속눈썹이 3주 만에 빠진다면, 글루가 아니라 순서를 의심하세요.
 
@@ -418,6 +315,201 @@ Save this and check your sequence on the next set.`,
         title: "리텐션은 재능이 아닙니다",
         body: "순서와 기준을 잡으면 누구나 4주를 만듭니다. 더 깊은 내용은 프로필 링크의 수업에서 다룹니다.",
         en: "Retention is a system, not a talent.",
+      },
+    ],
+  },
+  {
+    id: "why-build-glue",
+    caption: `글루를 직접 만들게 된 이유.
+
+교육을 하다 보니 같은 내용을 가르쳐도 결과가 갈렸습니다.
+원인을 따라가 보니 제품이었습니다.
+
+I started teaching. Then I had to build the product.`,
+    hashtags: [
+      "#LED속눈썹연장", "#속눈썹글루", "#속눈썹교육", "#제품개발", "#래쉬아티스트",
+      "#ledlash", "#lashadhesive", "#lashtraining", "#koreanlash", "#lashtech",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "04",
+        title: "글루를 직접\n만든 이유",
+        subtitle: "교육이 먼저였고, 제품은 그다음이었습니다",
+        en: "Teaching came first. The product followed.",
+      },
+      {
+        kind: "point",
+        title: "결과가 갈렸습니다",
+        body: "같은 기준을 가르쳤는데 어떤 원장님은 4주를 만들고 어떤 원장님은 2주에 무너졌습니다. 손의 문제가 아니었습니다.",
+        en: "Same lesson, different results. It was not the hands.",
+      },
+      {
+        kind: "point",
+        title: "제품이 기준을 못 따라왔습니다",
+        body: "LED 전용이라고 나온 글루들이 경화 조건이 제각각이었습니다. 가르치는 기준이 있어도 재료가 흔들리면 재현이 안 됩니다.",
+        en: "A standard means nothing if the material will not hold it.",
+      },
+      {
+        kind: "point",
+        title: "그래서 만들었습니다",
+        body: "교육 데이터를 근거로 LED 전용 글루와 램프를 개발해 출시했습니다. 지금은 판매보다 수강생 실무 교육을 지원하는 쪽으로 운영합니다.",
+        en: "Built the adhesive and the lamp from teaching data.",
+      },
+      {
+        kind: "close",
+        title: "재현되지 않으면 교육이 아닙니다",
+        body: "배운 사람이 자기 샵에서 같은 결과를 낼 수 있어야 교육입니다. 그때까지 책임지는 게 맞다고 생각합니다.",
+        en: "If it cannot be reproduced, it was not training.",
+      },
+    ],
+  },
+  {
+    id: "result-speaks",
+    caption: `잘 나온 눈매 하나가 백 마디보다 낫습니다.
+
+결과는 시술 직후가 아니라 3주 뒤에 판단합니다.
+
+One good set says more than a hundred words. Judge it at week three.`,
+    hashtags: [
+      "#속눈썹연장", "#LED속눈썹연장", "#눈매디자인", "#청담속눈썹", "#아이디자인",
+      "#eyelashextensions", "#lashdesign", "#koreanlash", "#ledlash", "#eyedesign",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "17",
+        title: "결과로\n말합니다",
+        subtitle: "3주 뒤에 보는 눈매",
+        en: "Judged at week three",
+      },
+      {
+        kind: "photo",
+        photo: "07",
+        title: "한 올씩 봅니다",
+        body: "자모 하나에 가모 하나. 간격과 방향이 흐트러지면 아무리 예뻐도 오래 못 갑니다.",
+        en: "One extension per natural lash. Spacing and direction decide the rest.",
+      },
+      {
+        kind: "photo",
+        photo: "18",
+        title: "빛으로 굳힙니다",
+        body: "LED는 빨리 굳는 게 아니라 원하는 때에 굳게 만드는 기술입니다. 조사 거리와 시간이 기준입니다.",
+        en: "LED is not about speed. It is about curing on your terms.",
+      },
+      {
+        kind: "photo",
+        photo: "03",
+        title: "얼굴에서 봅니다",
+        body: "눈만 보고 만든 디자인은 눈만 예쁩니다. 얼굴 전체에서 눈이 어떤 무게를 갖는지가 인상을 정합니다.",
+        en: "A design made for the eye alone flatters only the eye.",
+      },
+      {
+        kind: "close",
+        title: "오래가는 것이 실력입니다",
+        body: "끝난 직후 사진은 누구나 예쁩니다. 3주 뒤에도 같으면 그때 기술입니다.",
+        en: "Anyone looks good on day one.",
+      },
+    ],
+  },
+  {
+    id: "teaching-room",
+    caption: `가르치는 일이 제일 어렵습니다.
+
+내 손으로 하는 건 제가 책임지면 되는데,
+가르친 기술은 원장님들 손에서 매일 반복됩니다.
+
+Teaching is the hardest part. What I teach gets repeated every day, by others.`,
+    hashtags: [
+      "#속눈썹교육", "#LED속눈썹연장", "#래쉬아티스트", "#원장님공부", "#위닛크루",
+      "#lasheducation", "#lashtraining", "#koreanlash", "#lashartist", "#weneedcrew",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "10",
+        title: "가르치는 일이\n제일 어렵습니다",
+        subtitle: "매일 반복될 기술을 넘기는 일",
+        en: "Why teaching is the hardest part",
+      },
+      {
+        kind: "photo",
+        photo: "01",
+        title: "설명할 수 있어야 기술입니다",
+        body: "손으로는 되는데 말로 안 되는 건 아직 기술이 아니라 습관입니다. 가르치려면 순서를 글로 만들어야 합니다.",
+        en: "If you cannot explain it, it is a habit, not a technique.",
+      },
+      {
+        kind: "photo",
+        photo: "04",
+        title: "매번 새로 씁니다",
+        body: "같은 과정이어도 오는 분들이 다릅니다. 어디서 막히는지가 다르니 그때마다 자료를 고칩니다.",
+        en: "Same course, different people. The material changes every time.",
+      },
+      {
+        kind: "point",
+        title: "재현될 때까지가 교육입니다",
+        body: "강의실에서 한 번 성공하는 건 쉽습니다. 각자 샵에서 각자 고객에게 같은 결과가 나와야 끝난 것입니다.",
+        en: "It ends when it works in their own studio, not mine.",
+      },
+      {
+        kind: "photo",
+        photo: "11",
+        title: "그래서 계속합니다",
+        body: "잘 나왔다고 사진 보내주시는 분들이 있습니다. 그 순간이 제일 좋습니다.",
+        en: "They send me photos when it works. That is the best part.",
+      },
+      {
+        kind: "close",
+        title: "혼자보다 크루로",
+        body: "기준을 나눠 가진 사람이 많아질수록 기술이 오래갑니다. 위닛 크루가 그 방식입니다.",
+        en: "A standard shared by many outlives the one who made it.",
+      },
+    ],
+  },
+  {
+    id: "coaching-competitors",
+    caption: `대회에 나가야 실력이 증명됩니다.
+
+지도한 선수들이 여러 대회에서 1위를 했습니다.
+심사 기준을 아는 사람이 가르치면 결과가 달라집니다.
+
+Artists I've trained have taken first place, repeatedly.`,
+    hashtags: [
+      "#속눈썹대회", "#래쉬아티스트", "#속눈썹교육", "#월드래쉬컵", "#선수지도",
+      "#lashcompetition", "#lashartist", "#lashtraining", "#koreanlash", "#lasheducator",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "11",
+        title: "대회에 나가야\n증명됩니다",
+        subtitle: "선수 지도에서 실제로 하는 일",
+        en: "Why competition proves what training cannot",
+      },
+      {
+        kind: "point",
+        title: "기준을 먼저 분석합니다",
+        body: "종목마다 보는 것이 다릅니다. 무엇으로 점수가 갈리는지 모르고 연습하면 시간만 씁니다. 심사 경험이 여기서 쓰입니다.",
+        en: "Know what is scored before you practice.",
+      },
+      {
+        kind: "point",
+        title: "선수마다 전략이 다릅니다",
+        body: "손이 빠른 선수와 정교한 선수는 다른 작품을 준비해야 합니다. 잘하는 것을 밀어주는 편이 약점을 메우는 것보다 빠릅니다.",
+        en: "Play to what the artist already does well.",
+      },
+      {
+        kind: "point",
+        title: "디자인 밸런스를 봅니다",
+        body: "기술이 아무리 깨끗해도 모델 얼굴에 맞지 않으면 설득이 안 됩니다. 대회에서도 결국 아이디자인이 평가됩니다.",
+        en: "Clean work still loses if the design ignores the face.",
+      },
+      {
+        kind: "close",
+        title: "결과로 증명되게",
+        body: "가르치는 것에서 끝내지 않고, 객관적인 무대에서 자기 기술을 증명할 수 있게 하는 것이 목표입니다.",
+        en: "Training should end on a stage, not in a classroom.",
       },
     ],
   },
@@ -521,93 +613,50 @@ It is not the technique. It is the standard.`,
     ],
   },
   {
-    id: "why-korean-lift",
-    caption: `노글루 리프트를 왜 "한국식"이라고 부르는가.
+    id: "judge-view",
+    tone: "deep",
+    caption: `심사위원석에서는 다르게 보입니다.
 
-2018년부터 전국을 돌며 가르쳤습니다.
-같은 기술을 그대로 들여오면 한국 고객의 모질에서 결과가 달랐기 때문입니다.
+싱가포르와 일본 NEEC에서 심사를 하고,
+한국 월드래쉬컵에서 LED 분과를 맡으면서 알게 된 것.
 
-Why we call it the Korean method — the hair itself is different.`,
+점수는 화려함이 아니라 일관성에서 갈립니다.
+
+What I learned from the judge's seat: consistency wins, not flash.`,
     hashtags: [
-      "#속눈썹펌", "#래쉬리프트", "#노글루", "#속눈썹교육", "#래쉬아티스트",
-      "#lashlift", "#noglue", "#koreanlash", "#lashtraining", "#lashartist",
+      "#속눈썹대회", "#월드래쉬컵", "#래쉬아티스트", "#속눈썹교육", "#심사위원",
+      "#lashcompetition", "#lashjudge", "#lashartist", "#koreanlash", "#lashtraining",
     ],
     slides: [
       {
         kind: "cover",
-        title: "왜 한국식\n노글루인가",
-        subtitle: "2018년부터 전국을 돌며 가르친 이유",
-        en: "Why the Korean no-glue method exists",
+        title: "심사위원석에서는\n다르게 보입니다",
+        subtitle: "대회가 알려주는 실력의 기준",
+        en: "What the judge's seat teaches you",
       },
       {
         kind: "point",
-        title: "모질이 다릅니다",
-        body: "한국인의 자모는 굵고 곧게 자라는 경우가 많습니다. 서양 기준의 시간과 약제를 그대로 쓰면 컬이 덜 잡히거나 반대로 상합니다.",
-        en: "Straighter, thicker hair does not respond to imported timing.",
+        title: "화려함은 오래 못 갑니다",
+        body: "첫눈에 눈길을 끄는 작품이 점수에서 밀리는 일이 자주 있습니다. 심사는 가까이서 오래 봅니다. 그때 남는 건 균일함입니다.",
+        en: "Judges look closely, for a long time. Evenness is what survives.",
       },
       {
         kind: "point",
-        title: "방향이 먼저입니다",
-        body: "컬을 얼마나 세우느냐보다 어느 방향으로 눕히느냐가 인상을 만듭니다. 눈매에 따라 같은 컬도 다르게 보입니다.",
-        en: "Direction shapes the impression more than curl strength.",
+        title: "간격이 실력입니다",
+        body: "가모 사이의 간격, 뿌리에서 띄운 거리, 방향의 일관성. 이 셋이 흔들리면 아무리 예쁜 디자인도 완성도에서 감점됩니다.",
+        en: "Spacing, root distance, direction. Three things that never lie.",
       },
       {
         kind: "point",
-        title: "손상 관리가 기술입니다",
-        body: "한 번 잘 나온 컬보다 다음 시술까지 자모가 버티는 게 중요합니다. 모질별로 시간과 약제를 나누는 기준이 필요합니다.",
-        en: "What matters is whether the lash survives until the next visit.",
+        title: "디자인은 얼굴과 맞아야 합니다",
+        body: "모델 얼굴에 맞지 않는 디자인은 기술이 좋아도 설득이 안 됩니다. 대회에서도 결국 아이디자인이 평가됩니다.",
+        en: "A design that ignores the face cannot win, however clean.",
       },
       {
         kind: "close",
-        title: "제품까지 만들었습니다",
-        body: "현장에서 쌓인 데이터로 한국인의 속눈썹 특성을 반영한 펌제 공동 개발에 참여했습니다.",
-        en: "Co-developed a lift solution built for Korean lashes.",
-      },
-    ],
-  },
-  {
-    id: "why-build-glue",
-    caption: `글루를 직접 만들게 된 이유.
-
-교육을 하다 보니 같은 내용을 가르쳐도 결과가 갈렸습니다.
-원인을 따라가 보니 제품이었습니다.
-
-I started teaching. Then I had to build the product.`,
-    hashtags: [
-      "#LED속눈썹연장", "#속눈썹글루", "#속눈썹교육", "#제품개발", "#래쉬아티스트",
-      "#ledlash", "#lashadhesive", "#lashtraining", "#koreanlash", "#lashtech",
-    ],
-    slides: [
-      {
-        kind: "cover",
-        photo: "04",
-        title: "글루를 직접\n만든 이유",
-        subtitle: "교육이 먼저였고, 제품은 그다음이었습니다",
-        en: "Teaching came first. The product followed.",
-      },
-      {
-        kind: "point",
-        title: "결과가 갈렸습니다",
-        body: "같은 기준을 가르쳤는데 어떤 원장님은 4주를 만들고 어떤 원장님은 2주에 무너졌습니다. 손의 문제가 아니었습니다.",
-        en: "Same lesson, different results. It was not the hands.",
-      },
-      {
-        kind: "point",
-        title: "제품이 기준을 못 따라왔습니다",
-        body: "LED 전용이라고 나온 글루들이 경화 조건이 제각각이었습니다. 가르치는 기준이 있어도 재료가 흔들리면 재현이 안 됩니다.",
-        en: "A standard means nothing if the material will not hold it.",
-      },
-      {
-        kind: "point",
-        title: "그래서 만들었습니다",
-        body: "교육 데이터를 근거로 LED 전용 글루와 램프를 개발해 출시했습니다. 지금은 판매보다 수강생 실무 교육을 지원하는 쪽으로 운영합니다.",
-        en: "Built the adhesive and the lamp from teaching data.",
-      },
-      {
-        kind: "close",
-        title: "재현되지 않으면 교육이 아닙니다",
-        body: "배운 사람이 자기 샵에서 같은 결과를 낼 수 있어야 교육입니다. 그때까지 책임지는 게 맞다고 생각합니다.",
-        en: "If it cannot be reproduced, it was not training.",
+        title: "그래서 선수를 지도합니다",
+        body: "심사 기준을 아는 사람이 가르치면 결과가 달라집니다. 지도한 선수들이 여러 대회에서 1위를 했습니다.",
+        en: "Artists I've trained have taken first place, repeatedly.",
       },
     ],
   },
@@ -665,48 +714,47 @@ Technique → Education → Product → Competition → Contents → Branding`,
     ],
   },
   {
-    id: "coaching-competitors",
-    caption: `대회에 나가야 실력이 증명됩니다.
+    id: "why-korean-lift",
+    caption: `노글루 리프트를 왜 "한국식"이라고 부르는가.
 
-지도한 선수들이 여러 대회에서 1위를 했습니다.
-심사 기준을 아는 사람이 가르치면 결과가 달라집니다.
+2018년부터 전국을 돌며 가르쳤습니다.
+같은 기술을 그대로 들여오면 한국 고객의 모질에서 결과가 달랐기 때문입니다.
 
-Artists I've trained have taken first place, repeatedly.`,
+Why we call it the Korean method — the hair itself is different.`,
     hashtags: [
-      "#속눈썹대회", "#래쉬아티스트", "#속눈썹교육", "#월드래쉬컵", "#선수지도",
-      "#lashcompetition", "#lashartist", "#lashtraining", "#koreanlash", "#lasheducator",
+      "#속눈썹펌", "#래쉬리프트", "#노글루", "#속눈썹교육", "#래쉬아티스트",
+      "#lashlift", "#noglue", "#koreanlash", "#lashtraining", "#lashartist",
     ],
     slides: [
       {
         kind: "cover",
-        photo: "11",
-        title: "대회에 나가야\n증명됩니다",
-        subtitle: "선수 지도에서 실제로 하는 일",
-        en: "Why competition proves what training cannot",
+        title: "왜 한국식\n노글루인가",
+        subtitle: "2018년부터 전국을 돌며 가르친 이유",
+        en: "Why the Korean no-glue method exists",
       },
       {
         kind: "point",
-        title: "기준을 먼저 분석합니다",
-        body: "종목마다 보는 것이 다릅니다. 무엇으로 점수가 갈리는지 모르고 연습하면 시간만 씁니다. 심사 경험이 여기서 쓰입니다.",
-        en: "Know what is scored before you practice.",
+        title: "모질이 다릅니다",
+        body: "한국인의 자모는 굵고 곧게 자라는 경우가 많습니다. 서양 기준의 시간과 약제를 그대로 쓰면 컬이 덜 잡히거나 반대로 상합니다.",
+        en: "Straighter, thicker hair does not respond to imported timing.",
       },
       {
         kind: "point",
-        title: "선수마다 전략이 다릅니다",
-        body: "손이 빠른 선수와 정교한 선수는 다른 작품을 준비해야 합니다. 잘하는 것을 밀어주는 편이 약점을 메우는 것보다 빠릅니다.",
-        en: "Play to what the artist already does well.",
+        title: "방향이 먼저입니다",
+        body: "컬을 얼마나 세우느냐보다 어느 방향으로 눕히느냐가 인상을 만듭니다. 눈매에 따라 같은 컬도 다르게 보입니다.",
+        en: "Direction shapes the impression more than curl strength.",
       },
       {
         kind: "point",
-        title: "디자인 밸런스를 봅니다",
-        body: "기술이 아무리 깨끗해도 모델 얼굴에 맞지 않으면 설득이 안 됩니다. 대회에서도 결국 아이디자인이 평가됩니다.",
-        en: "Clean work still loses if the design ignores the face.",
+        title: "손상 관리가 기술입니다",
+        body: "한 번 잘 나온 컬보다 다음 시술까지 자모가 버티는 게 중요합니다. 모질별로 시간과 약제를 나누는 기준이 필요합니다.",
+        en: "What matters is whether the lash survives until the next visit.",
       },
       {
         kind: "close",
-        title: "결과로 증명되게",
-        body: "가르치는 것에서 끝내지 않고, 객관적인 무대에서 자기 기술을 증명할 수 있게 하는 것이 목표입니다.",
-        en: "Training should end on a stage, not in a classroom.",
+        title: "제품까지 만들었습니다",
+        body: "현장에서 쌓인 데이터로 한국인의 속눈썹 특성을 반영한 펌제 공동 개발에 참여했습니다.",
+        en: "Co-developed a lift solution built for Korean lashes.",
       },
     ],
   },
@@ -771,105 +819,57 @@ From Cheongdam to Shanghai — technique, education, product, salon as one.`,
     ],
   },
   {
-    id: "teaching-room",
-    caption: `가르치는 일이 제일 어렵습니다.
+    id: "reframe-intro",
+    caption: `눈만 보면 디자인이 안 나옵니다.
 
-내 손으로 하는 건 제가 책임지면 되는데,
-가르친 기술은 원장님들 손에서 매일 반복됩니다.
+같은 눈매인데 어울리는 디자인이 다른 이유는 얼굴이 다르기 때문입니다.
+그래서 골격진단을 아이디자인에 가져왔습니다.
 
-Teaching is the hardest part. What I teach gets repeated every day, by others.`,
+리프레임(REFRAME)은 속눈썹의 컬·길이·밀도를 고르는 메뉴가 아니라,
+눈을 중심으로 인상을 다시 설계하는 시스템입니다.
+
+REFRAME — an eye design system built on facial structure diagnosis.`,
     hashtags: [
-      "#속눈썹교육", "#LED속눈썹연장", "#래쉬아티스트", "#원장님공부", "#위닛크루",
-      "#lasheducation", "#lashtraining", "#koreanlash", "#lashartist", "#weneedcrew",
+      "#리프레임", "#아이디자인", "#골격진단", "#눈매교정", "#속눈썹디자인",
+      "#reframe", "#eyedesign", "#koreanlash", "#facialbalance", "#lashdesign",
     ],
     slides: [
       {
         kind: "cover",
-        photo: "10",
-        title: "가르치는 일이\n제일 어렵습니다",
-        subtitle: "매일 반복될 기술을 넘기는 일",
-        en: "Why teaching is the hardest part",
-      },
-      {
-        kind: "photo",
-        photo: "01",
-        title: "설명할 수 있어야 기술입니다",
-        body: "손으로는 되는데 말로 안 되는 건 아직 기술이 아니라 습관입니다. 가르치려면 순서를 글로 만들어야 합니다.",
-        en: "If you cannot explain it, it is a habit, not a technique.",
-      },
-      {
-        kind: "photo",
-        photo: "04",
-        title: "매번 새로 씁니다",
-        body: "같은 과정이어도 오는 분들이 다릅니다. 어디서 막히는지가 다르니 그때마다 자료를 고칩니다.",
-        en: "Same course, different people. The material changes every time.",
+        photo: "03",
+        title: "눈만 보면\n디자인이 안 나옵니다",
+        subtitle: "REFRAME — 골격에서 시작하는 아이디자인",
+        en: "REFRAME — Eye design starts with the face",
       },
       {
         kind: "point",
-        title: "재현될 때까지가 교육입니다",
-        body: "강의실에서 한 번 성공하는 건 쉽습니다. 각자 샵에서 각자 고객에게 같은 결과가 나와야 끝난 것입니다.",
-        en: "It ends when it works in their own studio, not mine.",
+        title: "왜 얼굴까지 보는가",
+        body: "같은 눈매에 같은 디자인을 해도 어울리는 사람과 아닌 사람이 갈립니다. 눈은 얼굴 안에 있고, 인상은 눈 하나가 아니라 비율이 만들기 때문입니다.",
+        en: "The eye sits inside a face. Impression comes from proportion.",
       },
       {
-        kind: "photo",
-        photo: "11",
-        title: "그래서 계속합니다",
-        body: "잘 나왔다고 사진 보내주시는 분들이 있습니다. 그 순간이 제일 좋습니다.",
-        en: "They send me photos when it works. That is the best part.",
+        kind: "point",
+        title: "여섯 가지를 봅니다",
+        body: "얼굴 골격과 비율, 눈의 위치와 형태, 눈썹과 눈의 관계, 자모의 방향·길이·밀도, 지금 가지고 있는 이미지, 그리고 원하는 인상.",
+        en: "Six inputs: bone structure, eye position, brow relation, lash condition, current image, desired impression.",
       },
       {
-        kind: "close",
-        title: "혼자보다 크루로",
-        body: "기준을 나눠 가진 사람이 많아질수록 기술이 오래갑니다. 위닛 크루가 그 방식입니다.",
-        en: "A standard shared by many outlives the one who made it.",
-      },
-    ],
-  },
-  {
-    id: "result-speaks",
-    caption: `잘 나온 눈매 하나가 백 마디보다 낫습니다.
-
-결과는 시술 직후가 아니라 3주 뒤에 판단합니다.
-
-One good set says more than a hundred words. Judge it at week three.`,
-    hashtags: [
-      "#속눈썹연장", "#LED속눈썹연장", "#눈매디자인", "#청담속눈썹", "#아이디자인",
-      "#eyelashextensions", "#lashdesign", "#koreanlash", "#ledlash", "#eyedesign",
-    ],
-    slides: [
-      {
-        kind: "cover",
-        photo: "17",
-        title: "결과로\n말합니다",
-        subtitle: "3주 뒤에 보는 눈매",
-        en: "Judged at week three",
+        kind: "point",
+        title: "순서가 정해져 있습니다",
+        body: "골격 분석 → 눈과 얼굴 밸런스 진단 → 이미지 상담 → 디자인 설계 → 기술 선택 → 시술. 감각이 아니라 순서를 따릅니다.",
+        en: "Analysis → Diagnosis → Counseling → Planning → Technique → Design.",
       },
       {
-        kind: "photo",
-        photo: "07",
-        title: "한 올씩 봅니다",
-        body: "자모 하나에 가모 하나. 간격과 방향이 흐트러지면 아무리 예뻐도 오래 못 갑니다.",
-        en: "One extension per natural lash. Spacing and direction decide the rest.",
-      },
-      {
-        kind: "photo",
-        photo: "18",
-        title: "빛으로 굳힙니다",
-        body: "LED는 빨리 굳는 게 아니라 원하는 때에 굳게 만드는 기술입니다. 조사 거리와 시간이 기준입니다.",
-        en: "LED is not about speed. It is about curing on your terms.",
-      },
-      {
-        kind: "photo",
-        photo: "03",
-        title: "얼굴에서 봅니다",
-        body: "눈만 보고 만든 디자인은 눈만 예쁩니다. 얼굴 전체에서 눈이 어떤 무게를 갖는지가 인상을 정합니다.",
-        en: "A design made for the eye alone flatters only the eye.",
+        kind: "point",
+        title: "기술은 마지막에 고릅니다",
+        body: "LED 연장, 래쉬 리프트, 하이브리드 중 무엇을 쓸지는 진단이 끝난 뒤에 정합니다. 기술을 먼저 정하고 얼굴을 맞추면 순서가 거꾸로입니다.",
+        en: "The technique is chosen after the diagnosis, never before.",
       },
       {
         kind: "close",
-        title: "오래가는 것이 실력입니다",
-        body: "끝난 직후 사진은 누구나 예쁩니다. 3주 뒤에도 같으면 그때 기술입니다.",
-        en: "Anyone looks good on day one.",
+        title: "감각을 시스템으로",
+        body: "잘하는 사람의 감을 배울 수는 없지만, 순서는 배울 수 있습니다. 리프레임은 그 순서를 글로 만든 것입니다.",
+        en: "You cannot copy instinct. You can copy a system.",
       },
     ],
   },

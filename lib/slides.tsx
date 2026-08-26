@@ -12,6 +12,7 @@
  */
 import { BRAND } from "@/content/brand";
 import type { Slide } from "@/content/posts";
+import { PHOTOS } from "@/content/photos";
 
 const { colors: C, type: T, padding: P, size } = BRAND;
 
@@ -19,6 +20,7 @@ function Frame({
   bg,
   photoSrc,
   photoPosition,
+  splitPhoto,
   top,
   middle,
   bottom,
@@ -28,6 +30,8 @@ function Frame({
   /** 깔면 배경 사진 위에 글이 앉는다 */
   photoSrc?: string;
   photoPosition?: "top" | "center" | "bottom";
+  /** 사진을 배경으로 깔지 않고 위쪽에 따로 앉힌다 */
+  splitPhoto?: boolean;
   top: React.ReactNode;
   middle: React.ReactNode;
   bottom: React.ReactNode;
@@ -42,31 +46,52 @@ function Frame({
         display: "flex",
         flexDirection: "column",
         backgroundColor: bg,
-        padding: P,
-        ...(photoSrc
+        ...(photoSrc && !splitPhoto
           ? {
               // 사진 위에 어두운 막을 겹쳐야 글자가 읽힌다. 두 겹을 한 번에 준다.
-              backgroundImage: `linear-gradient(to bottom, rgba(20,17,15,0.12) 0%, rgba(20,17,15,0.38) 42%, rgba(20,17,15,0.90) 100%), url(${photoSrc})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(20,17,15,0.10) 0%, rgba(20,17,15,0.30) 35%, rgba(20,17,15,0.72) 62%, rgba(20,17,15,0.94) 100%), url(${photoSrc})`,
               backgroundSize: "cover",
               backgroundPosition: photoPosition ?? "center",
             }
           : {}),
       }}
     >
-      <div style={{ display: "flex", flexDirection: "column" }}>{top}</div>
+      {/* 가로 사진은 위쪽에 통째로 앉힌다. 잘리는 것보다 낫다 */}
+      {photoSrc && splitPhoto ? (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            height: Math.round(size.height * 0.52),
+            backgroundImage: `url(${photoSrc})`,
+            backgroundSize: "cover",
+            backgroundPosition: photoPosition ?? "center",
+          }}
+        />
+      ) : null}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
-          justifyContent: align,
-          paddingTop: 48,
-          paddingBottom: 48,
+          padding: P,
         }}
       >
-        {middle}
+        <div style={{ display: "flex", flexDirection: "column" }}>{top}</div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flexGrow: 1,
+            justifyContent: align,
+            paddingTop: splitPhoto ? 28 : 48,
+            paddingBottom: splitPhoto ? 20 : 48,
+          }}
+        >
+          {middle}
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>{bottom}</div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column" }}>{bottom}</div>
     </div>
   );
 }
@@ -133,6 +158,17 @@ function photoUrl(origin: string, id: string): string {
   return `${origin}/photos/${id}.jpg`;
 }
 
+/**
+ * 가로 사진을 4:5 판에 꽉 채우면 양옆이 잘린다.
+ * 눈이나 손끝 클로즈업은 잘려도 그림이 되지만, 단체 사진이나 공간 사진은
+ * 사람과 맥락이 같이 잘려나간다. 그런 사진은 위쪽에 통째로 앉히고 아래를 글자 자리로 쓴다.
+ */
+function needsSplit(id: string): boolean {
+  const meta = PHOTOS.find((p) => p.id === id);
+  if (!meta?.landscape) return false;
+  return meta.use !== "result" && meta.use !== "craft";
+}
+
 export function renderSlide(
   slide: Slide,
   index: number,
@@ -143,10 +179,13 @@ export function renderSlide(
   const page = `${index + 1} / ${total}`;
   // 표지와 마무리만 톤을 따른다. 본문은 항상 누드여야 글이 읽힌다.
   // 사진을 깔면 톤과 상관없이 밝은 글자를 쓴다 — 어두운 글자는 사진에 묻힌다.
-  const hasCoverPhoto = slide.kind === "cover" && Boolean(slide.photo);
-  const onDark = tone === "deep" || hasCoverPhoto;
+  const coverPhoto = slide.kind === "cover" ? slide.photo : undefined;
+  // 사진을 위쪽에 따로 앉히는 경우 글자는 사진이 아니라 배경색 위에 온다
+  const coverSplit = coverPhoto ? needsSplit(coverPhoto) : false;
+  const textOnPhoto = Boolean(coverPhoto) && !coverSplit;
+  const onDark = tone === "deep" || textOnPhoto;
   const coverBg = onDark ? C.deep : C.nude;
-  const coverText = hasCoverPhoto ? "#FFFFFF" : onDark ? C.onDeep : C.onNude;
+  const coverText = textOnPhoto ? "#FFFFFF" : onDark ? C.onDeep : C.onNude;
   const coverMuted = onDark ? C.mutedOnDeep : C.muted;
 
   if (slide.kind === "cover") {
@@ -155,6 +194,7 @@ export function renderSlide(
         bg={coverBg}
         photoSrc={slide.photo ? photoUrl(origin, slide.photo) : undefined}
         photoPosition={slide.photoPosition}
+        splitPhoto={coverSplit}
         align="flex-end"
         top={
           <div style={{ display: "flex", flexDirection: "column" }}>
