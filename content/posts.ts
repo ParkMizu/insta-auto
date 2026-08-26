@@ -87,7 +87,11 @@ export interface Post {
   tone?: "deep" | "light";
   /** 인스타 본문에 들어갈 글 */
   caption: string;
-  /** 해시태그. 한국어와 영어를 섞어야 해외에도 걸린다 */
+  /**
+   * 해시태그 — **정확히 다섯 개**. 원장님 계정 기준이다.
+   * 한글 셋(계정 정체성 + 글 주제)과 영문 둘(해외 노출)로 나눠 쓴다.
+   * #koreanlash는 해외에서 들어오는 축이라 웬만하면 남긴다.
+   */
   hashtags: string[];
   slides: Slide[];
 }
@@ -103,10 +107,7 @@ export const POSTS: Post[] = [
 LED 교육에서 가장 먼저 잡는 기준입니다.
 
 Before you blame the lamp — did you measure the distance?`,
-    hashtags: [
-      "#LED속눈썹연장", "#LED래쉬", "#속눈썹연장", "#속눈썹교육", "#유지력",
-      "#ledlash", "#lashextensions", "#lashtraining", "#koreanlash", "#lashtech",
-    ],
+    hashtags: ["#LED속눈썹연장", "#속눈썹교육", "#유지력", "#ledlash", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -159,10 +160,7 @@ Before you blame the lamp — did you measure the distance?`,
 같은 손님을 3주 뒤에 다시 보면서 알게 된 것들 때문입니다.
 
 Neither order is wrong. What changes is what happens after.`,
-    hashtags: [
-      "#연장후펌", "#하이브리드래쉬", "#속눈썹펌", "#속눈썹연장", "#속눈썹교육",
-      "#hybridlash", "#lashlift", "#lashextensions", "#koreanlash", "#lashtraining",
-    ],
+    hashtags: ["#연장후펌", "#하이브리드래쉬", "#속눈썹교육", "#hybridlash", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -224,10 +222,7 @@ Neither order is wrong. What changes is what happens after.`,
 
 If your extensions drop in three weeks, it is rarely the glue.
 Save this and check your sequence on the next set.`,
-    hashtags: [
-      "#속눈썹연장", "#속눈썹교육", "#래쉬아티스트", "#뷰티창업", "#원장님공부",
-      "#lashartist", "#lashtraining", "#koreanlash", "#eyelashextensions", "#lashtech",
-    ],
+    hashtags: ["#속눈썹연장", "#속눈썹교육", "#래쉬아티스트", "#lashtraining", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -286,10 +281,7 @@ Save this and check your sequence on the next set.`,
 요즘은 해외에서도 이 결과를 먼저 물어보십니다.
 
 Why lift and extension became one design in Korea.`,
-    hashtags: [
-      "#연장후펌", "#리프텐션", "#하이브리드래쉬", "#속눈썹연장", "#속눈썹펌",
-      "#liftensions", "#hybridlash", "#lashlift", "#koreanlash", "#lashextensions",
-    ],
+    hashtags: ["#연장후펌", "#리프텐션", "#하이브리드래쉬", "#liftensions", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -344,10 +336,7 @@ Why lift and extension became one design in Korea.`,
 원인을 따라가 보니 제품이었습니다.
 
 I started teaching. Then I had to build the product.`,
-    hashtags: [
-      "#LED속눈썹연장", "#속눈썹글루", "#속눈썹교육", "#제품개발", "#래쉬아티스트",
-      "#ledlash", "#lashadhesive", "#lashtraining", "#koreanlash", "#lashtech",
-    ],
+    hashtags: ["#LED속눈썹연장", "#속눈썹글루", "#속눈썹교육", "#ledlash", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -391,10 +380,7 @@ I started teaching. Then I had to build the product.`,
 붙는 힘과 컬 방향을 같이 잡을 수 있습니다.
 
 Adding LED to the lift-and-extension design.`,
-    hashtags: [
-      "#LED속눈썹연장", "#연장후펌", "#하이브리드래쉬", "#속눈썹교육", "#유지력",
-      "#ledlash", "#hybridlash", "#lashlift", "#koreanlash", "#lashtraining",
-    ],
+    hashtags: ["#LED속눈썹연장", "#연장후펌", "#하이브리드래쉬", "#hybridlash", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -443,10 +429,7 @@ Adding LED to the lift-and-extension design.`,
 가르친 기술은 원장님들 손에서 매일 반복됩니다.
 
 Teaching is the hardest part. What I teach gets repeated every day, by others.`,
-    hashtags: [
-      "#속눈썹교육", "#LED속눈썹연장", "#래쉬아티스트", "#원장님공부", "#위닛크루",
-      "#lasheducation", "#lashtraining", "#koreanlash", "#lashartist", "#weneedcrew",
-    ],
+    hashtags: ["#속눈썹교육", "#LED속눈썹연장", "#위닛크루", "#lasheducation", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -495,10 +478,7 @@ Teaching is the hardest part. What I teach gets repeated every day, by others.`,
 심사 기준을 아는 사람이 가르치면 결과가 달라집니다.
 
 Artists I've trained have taken first place, repeatedly.`,
-    hashtags: [
-      "#속눈썹대회", "#래쉬아티스트", "#속눈썹교육", "#월드래쉬컵", "#선수지도",
-      "#lashcompetition", "#lashartist", "#lashtraining", "#koreanlash", "#lasheducator",
-    ],
+    hashtags: ["#속눈썹대회", "#월드래쉬컵", "#속눈썹교육", "#lashcompetition", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -541,10 +521,7 @@ Artists I've trained have taken first place, repeatedly.`,
 그 3분에 무엇을 묻는지 정리했습니다.
 
 The best lash artists spend three minutes before they touch a single lash.`,
-    hashtags: [
-      "#속눈썹연장", "#속눈썹교육", "#뷰티창업", "#고객관리", "#래쉬아티스트",
-      "#lashartist", "#lashconsultation", "#koreanlash", "#beautybusiness", "#lashtraining",
-    ],
+    hashtags: ["#속눈썹연장", "#속눈썹교육", "#고객관리", "#lashartist", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -594,10 +571,7 @@ The best lash artists spend three minutes before they touch a single lash.`,
 
 The most common question I get from artists abroad.
 It is not the technique. It is the standard.`,
-    hashtags: [
-      "#koreanlash", "#lashartist", "#lashtraining", "#kbeauty", "#eyelashextensions",
-      "#속눈썹연장", "#속눈썹교육", "#래쉬아티스트", "#케이뷰티", "#글로벌교육",
-    ],
+    hashtags: ["#속눈썹연장", "#속눈썹교육", "#케이뷰티", "#koreanlash", "#kbeauty"],
     slides: [
       {
         kind: "cover",
@@ -643,10 +617,7 @@ It is not the technique. It is the standard.`,
 점수는 화려함이 아니라 일관성에서 갈립니다.
 
 What I learned from the judge's seat: consistency wins, not flash.`,
-    hashtags: [
-      "#속눈썹대회", "#월드래쉬컵", "#래쉬아티스트", "#속눈썹교육", "#심사위원",
-      "#lashcompetition", "#lashjudge", "#lashartist", "#koreanlash", "#lashtraining",
-    ],
+    hashtags: ["#속눈썹대회", "#월드래쉬컵", "#심사위원", "#lashcompetition", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -689,10 +660,7 @@ What I learned from the judge's seat: consistency wins, not flash.`,
 교육하고, 제품으로 만들고, 대회 기준까지 세우면 분야가 됩니다.
 
 Technique → Education → Product → Competition → Contents → Branding`,
-    hashtags: [
-      "#뷰티창업", "#속눈썹교육", "#브랜딩", "#래쉬아티스트", "#원장님공부",
-      "#beautybusiness", "#lasheducator", "#lashartist", "#koreanlash", "#branding",
-    ],
+    hashtags: ["#속눈썹교육", "#뷰티창업", "#래쉬아티스트", "#lasheducator", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -741,10 +709,7 @@ Technique → Education → Product → Competition → Contents → Branding`,
 밖에서 배운 방식을 그대로 쓰면 한국 손님 속눈썹에서는 결과가 달랐기 때문입니다.
 
 Why we call it the Korean method — the hair itself is different.`,
-    hashtags: [
-      "#속눈썹펌", "#래쉬리프트", "#노글루", "#속눈썹교육", "#래쉬아티스트",
-      "#lashlift", "#noglue", "#koreanlash", "#lashtraining", "#lashartist",
-    ],
+    hashtags: ["#속눈썹펌", "#래쉬리프트", "#노글루", "#lashlift", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -788,10 +753,7 @@ Why we call it the Korean method — the hair itself is different.`,
 일본과 상하이를 시작으로 넓혀가고 있습니다.
 
 From Cheongdam to Shanghai — technique, education, product, salon as one.`,
-    hashtags: [
-      "#위닛아이디자인", "#속눈썹교육", "#케이뷰티", "#뷰티창업", "#래쉬아티스트",
-      "#kbeauty", "#lasheducation", "#koreanlash", "#lashartist", "#weneed",
-    ],
+    hashtags: ["#위닛아이디자인", "#케이뷰티", "#속눈썹교육", "#kbeauty", "#koreanlash"],
     slides: [
       {
         kind: "cover",
@@ -843,10 +805,7 @@ From Cheongdam to Shanghai — technique, education, product, salon as one.`,
 눈을 중심으로 인상을 다시 설계하는 시스템입니다.
 
 REFRAME — an eye design system built on facial structure diagnosis.`,
-    hashtags: [
-      "#리프레임", "#아이디자인", "#골격진단", "#눈매교정", "#속눈썹디자인",
-      "#reframe", "#eyedesign", "#koreanlash", "#facialbalance", "#lashdesign",
-    ],
+    hashtags: ["#리프레임", "#아이디자인", "#눈매교정", "#reframe", "#eyedesign"],
     slides: [
       {
         kind: "cover",
