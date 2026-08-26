@@ -15,7 +15,7 @@ import { renderSlide, slideTexts } from "@/lib/slides";
 export const revalidate = 86400;
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ postId: string; index: string }> },
 ) {
   const { postId, index } = await params;
@@ -33,9 +33,15 @@ export async function GET(
   const slide = post.slides[n];
   const fonts = await loadKoreanFonts(slideTexts(slide));
 
-  return new ImageResponse(renderSlide(slide, n, post.slides.length, post.tone), {
-    width: BRAND.size.width,
-    height: BRAND.size.height,
-    fonts: fonts.length ? fonts : undefined,
-  });
+  // satori가 사진을 가져가려면 절대 주소가 필요하다
+  const origin = new URL(request.url).origin;
+
+  return new ImageResponse(
+    renderSlide(slide, n, post.slides.length, post.tone, origin),
+    {
+      width: BRAND.size.width,
+      height: BRAND.size.height,
+      fonts: fonts.length ? fonts : undefined,
+    },
+  );
 }

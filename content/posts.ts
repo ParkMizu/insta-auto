@@ -18,6 +18,32 @@ export interface CoverSlide {
   /** 제목 아래 한 줄 */
   subtitle?: string;
   en?: string;
+  /**
+   * 배경에 깔 사진 (public/photos의 id). 넣으면 글자가 사진 위에 앉는다.
+   * 글이 묻히지 않게 어두운 막을 자동으로 덮는다.
+   */
+  photo?: string;
+}
+
+/**
+ * 사진 한 장이 판을 채우는 슬라이드.
+ *
+ * 글로 설명하는 것보다 보여주는 게 빠를 때 쓴다. 교육 현장, 시술 결과, 공간처럼
+ * "말로 하면 자랑이 되는 것"은 사진으로 두면 사실이 된다.
+ */
+export interface PhotoSlide {
+  kind: "photo";
+  /** public/photos의 id */
+  photo: string;
+  /**
+   * 4:5로 자를 때 사진의 어디를 남길지. 기본은 가운데.
+   * 기사 캡처처럼 위쪽에 중요한 게 있으면 "top"으로 둔다.
+   */
+  position?: "top" | "center" | "bottom";
+  /** 사진 아래에 얹을 짧은 글. 길면 사진을 가린다 */
+  title?: string;
+  body?: string;
+  en?: string;
 }
 
 /** 본문 — 번호가 붙는 핵심 하나 */
@@ -36,7 +62,7 @@ export interface CloseSlide {
   en?: string;
 }
 
-export type Slide = CoverSlide | PointSlide | CloseSlide;
+export type Slide = CoverSlide | PointSlide | PhotoSlide | CloseSlide;
 
 export interface Post {
   /** 파일 이름처럼 쓰는 고유값. 한 번 정하면 바꾸지 않는다 */
@@ -669,6 +695,169 @@ Artists I've trained have taken first place, repeatedly.`,
         title: "결과로 증명되게",
         body: "가르치는 것에서 끝내지 않고, 객관적인 무대에서 자기 기술을 증명할 수 있게 하는 것이 목표입니다.",
         en: "Training should end on a stage, not in a classroom.",
+      },
+    ],
+  },
+  {
+    id: "to-shanghai",
+    tone: "deep",
+    caption: `청담에서 시작해서 어디까지 갈 수 있을까요.
+
+기술과 교육, 제품과 살롱을 하나로 묶어
+일본과 상하이를 시작으로 넓혀가고 있습니다.
+
+From Cheongdam to Shanghai — technique, education, product, salon as one.`,
+    hashtags: [
+      "#위닛아이디자인", "#속눈썹교육", "#케이뷰티", "#뷰티창업", "#래쉬아티스트",
+      "#kbeauty", "#lasheducation", "#koreanlash", "#lashartist", "#weneed",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "15",
+        title: "청담에서\n상하이까지",
+        subtitle: "기술 하나로 어디까지 갈 수 있는가",
+        en: "From Cheongdam to Shanghai",
+      },
+      {
+        kind: "photo",
+        photo: "12",
+        position: "top",
+        en: "Maeil Business Newspaper, August 2026",
+      },
+      {
+        kind: "point",
+        title: "기사가 먼저 알렸습니다",
+        body: "위닛 아이디자인을 시술 브랜드가 아니라 교육·제품·콘텐츠와 살롱을 잇는 브랜드로 키운다는 계획이 매일경제에 실렸습니다.",
+        en: "The plan was covered before it was finished.",
+      },
+      {
+        kind: "point",
+        title: "네 가지를 함께 가져갑니다",
+        body: "기술만 수출하면 한 번으로 끝납니다. 기술과 교육, 제품과 살롱 운영을 같이 묶어야 현지에서 굴러갑니다.",
+        en: "Technique alone travels once. A system travels further.",
+      },
+      {
+        kind: "photo",
+        photo: "05",
+        title: "교육이 먼저 갑니다",
+        body: "현지 아티스트가 같은 기준으로 시술할 수 있어야 브랜드가 유지됩니다. 그래서 살롱보다 교육이 앞섭니다.",
+        en: "Education goes first, then the salon.",
+      },
+      {
+        kind: "point",
+        title: "일본과 상하이부터",
+        body: "가까운 시장에서 기준이 통하는지 먼저 확인하고, 동남아까지 넓혀갈 계획입니다.",
+        en: "Japan and Shanghai first, then Southeast Asia.",
+      },
+      {
+        kind: "close",
+        title: "함께 갈 원장님을 찾습니다",
+        body: "혼자 나가는 것보다 크루로 나가는 편이 멀리 갑니다. 위닛 크루에서 같이 준비하고 있습니다.",
+        en: "We are going as a crew, not alone.",
+      },
+    ],
+  },
+  {
+    id: "teaching-room",
+    caption: `가르치는 일이 제일 어렵습니다.
+
+내 손으로 하는 건 제가 책임지면 되는데,
+가르친 기술은 원장님들 손에서 매일 반복됩니다.
+
+Teaching is the hardest part. What I teach gets repeated every day, by others.`,
+    hashtags: [
+      "#속눈썹교육", "#LED속눈썹연장", "#래쉬아티스트", "#원장님공부", "#위닛크루",
+      "#lasheducation", "#lashtraining", "#koreanlash", "#lashartist", "#weneedcrew",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "10",
+        title: "가르치는 일이\n제일 어렵습니다",
+        subtitle: "매일 반복될 기술을 넘기는 일",
+        en: "Why teaching is the hardest part",
+      },
+      {
+        kind: "photo",
+        photo: "01",
+        title: "설명할 수 있어야 기술입니다",
+        body: "손으로는 되는데 말로 안 되는 건 아직 기술이 아니라 습관입니다. 가르치려면 순서를 글로 만들어야 합니다.",
+        en: "If you cannot explain it, it is a habit, not a technique.",
+      },
+      {
+        kind: "photo",
+        photo: "04",
+        title: "매번 새로 씁니다",
+        body: "같은 과정이어도 오는 분들이 다릅니다. 어디서 막히는지가 다르니 그때마다 자료를 고칩니다.",
+        en: "Same course, different people. The material changes every time.",
+      },
+      {
+        kind: "point",
+        title: "재현될 때까지가 교육입니다",
+        body: "강의실에서 한 번 성공하는 건 쉽습니다. 각자 샵에서 각자 고객에게 같은 결과가 나와야 끝난 것입니다.",
+        en: "It ends when it works in their own studio, not mine.",
+      },
+      {
+        kind: "photo",
+        photo: "11",
+        title: "그래서 계속합니다",
+        body: "잘 나왔다고 사진 보내주시는 분들이 있습니다. 그 순간이 제일 좋습니다.",
+        en: "They send me photos when it works. That is the best part.",
+      },
+      {
+        kind: "close",
+        title: "혼자보다 크루로",
+        body: "기준을 나눠 가진 사람이 많아질수록 기술이 오래갑니다. 위닛 크루가 그 방식입니다.",
+        en: "A standard shared by many outlives the one who made it.",
+      },
+    ],
+  },
+  {
+    id: "result-speaks",
+    caption: `잘 나온 눈매 하나가 백 마디보다 낫습니다.
+
+결과는 시술 직후가 아니라 3주 뒤에 판단합니다.
+
+One good set says more than a hundred words. Judge it at week three.`,
+    hashtags: [
+      "#속눈썹연장", "#LED속눈썹연장", "#눈매디자인", "#청담속눈썹", "#아이디자인",
+      "#eyelashextensions", "#lashdesign", "#koreanlash", "#ledlash", "#eyedesign",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        photo: "17",
+        title: "결과로\n말합니다",
+        subtitle: "3주 뒤에 보는 눈매",
+        en: "Judged at week three",
+      },
+      {
+        kind: "photo",
+        photo: "07",
+        title: "한 올씩 봅니다",
+        body: "자모 하나에 가모 하나. 간격과 방향이 흐트러지면 아무리 예뻐도 오래 못 갑니다.",
+        en: "One extension per natural lash. Spacing and direction decide the rest.",
+      },
+      {
+        kind: "photo",
+        photo: "18",
+        title: "빛으로 굳힙니다",
+        body: "LED는 빨리 굳는 게 아니라 원하는 때에 굳게 만드는 기술입니다. 조사 거리와 시간이 기준입니다.",
+        en: "LED is not about speed. It is about curing on your terms.",
+      },
+      {
+        kind: "photo",
+        photo: "03",
+        title: "얼굴에서 봅니다",
+        body: "눈만 보고 만든 디자인은 눈만 예쁩니다. 얼굴 전체에서 눈이 어떤 무게를 갖는지가 인상을 정합니다.",
+        en: "A design made for the eye alone flatters only the eye.",
+      },
+      {
+        kind: "close",
+        title: "오래가는 것이 실력입니다",
+        body: "끝난 직후 사진은 누구나 예쁩니다. 3주 뒤에도 같으면 그때 기술입니다.",
+        en: "Anyone looks good on day one.",
       },
     ],
   },

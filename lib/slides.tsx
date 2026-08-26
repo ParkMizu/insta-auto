@@ -17,12 +17,15 @@ const { colors: C, type: T, padding: P, size } = BRAND;
 
 function Frame({
   bg,
+  photoSrc,
   top,
   middle,
   bottom,
   align,
 }: {
   bg: string;
+  /** 깔면 배경 사진 위에 글이 앉는다 */
+  photoSrc?: string;
   top: React.ReactNode;
   middle: React.ReactNode;
   bottom: React.ReactNode;
@@ -38,6 +41,14 @@ function Frame({
         flexDirection: "column",
         backgroundColor: bg,
         padding: P,
+        ...(photoSrc
+          ? {
+              // 사진 위에 어두운 막을 겹쳐야 글자가 읽힌다. 두 겹을 한 번에 준다.
+              backgroundImage: `linear-gradient(to bottom, rgba(20,17,15,0.30) 0%, rgba(20,17,15,0.55) 45%, rgba(20,17,15,0.92) 100%), url(${photoSrc})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }
+          : {}),
       }}
     >
       <div style={{ display: "flex", flexDirection: "column" }}>{top}</div>
@@ -115,23 +126,32 @@ function Bottom({
   );
 }
 
+/** satori는 사진을 절대 주소로만 가져올 수 있다 */
+function photoUrl(origin: string, id: string): string {
+  return `${origin}/photos/${id}.jpg`;
+}
+
 export function renderSlide(
   slide: Slide,
   index: number,
   total: number,
   tone: "deep" | "light" = "light",
+  origin = "",
 ) {
   const page = `${index + 1} / ${total}`;
   // 표지와 마무리만 톤을 따른다. 본문은 항상 누드여야 글이 읽힌다.
-  const onDark = tone === "deep";
+  // 사진을 깔면 톤과 상관없이 밝은 글자를 쓴다 — 어두운 글자는 사진에 묻힌다.
+  const hasCoverPhoto = slide.kind === "cover" && Boolean(slide.photo);
+  const onDark = tone === "deep" || hasCoverPhoto;
   const coverBg = onDark ? C.deep : C.nude;
-  const coverText = onDark ? C.onDeep : C.onNude;
+  const coverText = hasCoverPhoto ? "#FFFFFF" : onDark ? C.onDeep : C.onNude;
   const coverMuted = onDark ? C.mutedOnDeep : C.muted;
 
   if (slide.kind === "cover") {
     return (
       <Frame
         bg={coverBg}
+        photoSrc={slide.photo ? photoUrl(origin, slide.photo) : undefined}
         align="flex-end"
         top={
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -195,6 +215,92 @@ export function renderSlide(
           <Bottom enColor={C.accent} footColor={coverMuted} page={page} />
         }
       />
+    );
+  }
+
+  if (slide.kind === "photo") {
+    const hasText = Boolean(slide.title || slide.body);
+    return (
+      <div
+        style={{
+          width: size.width,
+          height: size.height,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          backgroundColor: C.deep,
+          backgroundImage: `url(${photoUrl(origin, slide.photo)})`,
+          backgroundSize: "cover",
+          backgroundPosition: slide.position ?? "center",
+        }}
+      >
+        {/* 사진 아래쪽에 어두운 막을 깔아야 흰 글자가 읽힌다 */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            padding: P,
+            paddingTop: hasText ? 220 : P,
+            backgroundImage: hasText
+              ? "linear-gradient(to bottom, rgba(20,17,15,0), rgba(20,17,15,0.86))"
+              : "linear-gradient(to bottom, rgba(20,17,15,0), rgba(20,17,15,0.55))",
+          }}
+        >
+          {slide.title ? (
+            <div
+              style={{
+                display: "flex",
+                fontSize: T.title,
+                fontWeight: 700,
+                color: "#FFFFFF",
+                lineHeight: 1.28,
+                whiteSpace: "pre-line",
+              }}
+            >
+              {slide.title}
+            </div>
+          ) : null}
+          {slide.body ? (
+            <div
+              style={{
+                display: "flex",
+                fontSize: T.body,
+                color: "#EFE9E3",
+                lineHeight: 1.6,
+                marginTop: 24,
+              }}
+            >
+              {slide.body}
+            </div>
+          ) : null}
+          {slide.en ? (
+            <div
+              style={{
+                display: "flex",
+                fontSize: T.sub,
+                color: C.accent,
+                marginTop: 24,
+              }}
+            >
+              {slide.en}
+            </div>
+          ) : null}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              fontSize: T.caption,
+              color: "#CFC6BD",
+              marginTop: 32,
+            }}
+          >
+            <div style={{ display: "flex" }}>{BRAND.handle}</div>
+            <div style={{ display: "flex" }}>{page}</div>
+          </div>
+        </div>
+      </div>
     );
   }
 
@@ -293,6 +399,9 @@ export function slideTexts(slide: Slide): string[] {
   const common = [BRAND.handle, BRAND.eyebrow, "0123456789 /"];
   if (slide.kind === "cover") {
     return [slide.title, slide.subtitle ?? "", slide.en ?? "", ...common];
+  }
+  if (slide.kind === "photo") {
+    return [slide.title ?? "", slide.body ?? "", slide.en ?? "", ...common];
   }
   return [slide.title, slide.body, slide.en ?? "", ...common];
 }
