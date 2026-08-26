@@ -33,7 +33,7 @@ export async function GET(
   const slide = post.slides[n];
   const fonts = await loadKoreanFonts(slideTexts(slide));
 
-  return new ImageResponse(renderSlide(slide, n, post.slides.length), {
+  return new ImageResponse(renderSlide(slide, n, post.slides.length, post.tone), {
     width: BRAND.size.width,
     height: BRAND.size.height,
     fonts: fonts.length ? fonts : undefined,

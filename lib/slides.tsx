@@ -115,13 +115,23 @@ function Bottom({
   );
 }
 
-export function renderSlide(slide: Slide, index: number, total: number) {
+export function renderSlide(
+  slide: Slide,
+  index: number,
+  total: number,
+  tone: "deep" | "light" = "light",
+) {
   const page = `${index + 1} / ${total}`;
+  // 표지와 마무리만 톤을 따른다. 본문은 항상 누드여야 글이 읽힌다.
+  const onDark = tone === "deep";
+  const coverBg = onDark ? C.deep : C.nude;
+  const coverText = onDark ? C.onDeep : C.onNude;
+  const coverMuted = onDark ? C.mutedOnDeep : C.muted;
 
   if (slide.kind === "cover") {
     return (
       <Frame
-        bg={C.deep}
+        bg={coverBg}
         align="flex-end"
         top={
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -131,7 +141,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
                 display: "flex",
                 fontSize: T.caption,
                 letterSpacing: 4,
-                color: C.mutedOnDeep,
+                color: coverMuted,
                 marginTop: 28,
               }}
             >
@@ -160,7 +170,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
                 display: "flex",
                 fontSize: T.hero,
                 fontWeight: 700,
-                color: C.onDeep,
+                color: coverText,
                 lineHeight: 1.22,
                 whiteSpace: "pre-line",
               }}
@@ -172,7 +182,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
                 style={{
                   display: "flex",
                   fontSize: T.body,
-                  color: C.mutedOnDeep,
+                  color: coverMuted,
                   marginTop: 36,
                 }}
               >
@@ -182,7 +192,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
           </div>
         }
         bottom={
-          <Bottom enColor={C.accent} footColor={C.mutedOnDeep} page={page} />
+          <Bottom enColor={C.accent} footColor={coverMuted} page={page} />
         }
       />
     );
@@ -241,7 +251,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
 
   return (
     <Frame
-      bg={C.deep}
+      bg={coverBg}
       align="center"
       top={<Rule />}
       middle={
@@ -251,7 +261,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
               display: "flex",
               fontSize: T.title,
               fontWeight: 700,
-              color: C.onDeep,
+              color: coverText,
               lineHeight: 1.28,
               whiteSpace: "pre-line",
             }}
@@ -262,7 +272,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
             style={{
               display: "flex",
               fontSize: T.body,
-              color: C.mutedOnDeep,
+              color: coverMuted,
               lineHeight: 1.62,
               marginTop: 36,
             }}
@@ -272,7 +282,7 @@ export function renderSlide(slide: Slide, index: number, total: number) {
         </div>
       }
       bottom={
-        <Bottom en={slide.en} enColor={C.accent} footColor={C.mutedOnDeep} page={page} />
+        <Bottom en={slide.en} enColor={C.accent} footColor={coverMuted} page={page} />
       }
     />
   );

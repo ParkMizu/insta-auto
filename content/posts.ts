@@ -41,6 +41,15 @@ export type Slide = CoverSlide | PointSlide | CloseSlide;
 export interface Post {
   /** 파일 이름처럼 쓰는 고유값. 한 번 정하면 바꾸지 않는다 */
   id: string;
+  /**
+   * 표지와 마무리의 배경.
+   *  light(기본) — 누드. 실무 교육 글에 쓴다. 피드가 밝고 읽기 편하다.
+   *  deep        — 짙은 모카. 브랜드·권위 이야기에만 쓴다.
+   *
+   * 전부 deep으로 두면 피드가 어두운 벽이 된다. 참고한 계정들도 밝은 톤이 주였다.
+   * 셋 중 하나 정도만 deep으로 찍어야 그 글이 눈에 걸린다.
+   */
+  tone?: "deep" | "light";
   /** 인스타 본문에 들어갈 글 */
   caption: string;
   /** 해시태그. 한국어와 영어를 섞어야 해외에도 걸린다 */
@@ -51,6 +60,7 @@ export interface Post {
 export const POSTS: Post[] = [
   {
     id: "who-is-miju",
+    tone: "deep",
     caption: `속눈썹을 17년 했습니다.
 
 그중 13년은 제 샵을 운영했고, 지금은 청담 위닛 아이디자인에서
@@ -274,6 +284,7 @@ Before you blame the lamp — did you measure the distance?`,
   },
   {
     id: "judge-view",
+    tone: "deep",
     caption: `심사위원석에서는 다르게 보입니다.
 
 싱가포르와 일본 NEEC에서 심사를 하고,
@@ -471,6 +482,193 @@ It is not the technique. It is the standard.`,
         title: "배우러 오시는 분들께",
         body: "한국식 기준을 처음부터 정리해서 가르칩니다. 영어 통역이 필요한 분은 DM으로 문의 주세요.",
         en: "Training available for international artists. DM for details.",
+      },
+    ],
+  },
+  {
+    id: "why-korean-lift",
+    caption: `노글루 리프트를 왜 "한국식"이라고 부르는가.
+
+2018년부터 전국을 돌며 가르쳤습니다.
+같은 기술을 그대로 들여오면 한국 고객의 모질에서 결과가 달랐기 때문입니다.
+
+Why we call it the Korean method — the hair itself is different.`,
+    hashtags: [
+      "#속눈썹펌", "#래쉬리프트", "#노글루", "#속눈썹교육", "#래쉬아티스트",
+      "#lashlift", "#noglue", "#koreanlash", "#lashtraining", "#lashartist",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        title: "왜 한국식\n노글루인가",
+        subtitle: "2018년부터 전국을 돌며 가르친 이유",
+        en: "Why the Korean no-glue method exists",
+      },
+      {
+        kind: "point",
+        title: "모질이 다릅니다",
+        body: "한국인의 자모는 굵고 곧게 자라는 경우가 많습니다. 서양 기준의 시간과 약제를 그대로 쓰면 컬이 덜 잡히거나 반대로 상합니다.",
+        en: "Straighter, thicker hair does not respond to imported timing.",
+      },
+      {
+        kind: "point",
+        title: "방향이 먼저입니다",
+        body: "컬을 얼마나 세우느냐보다 어느 방향으로 눕히느냐가 인상을 만듭니다. 눈매에 따라 같은 컬도 다르게 보입니다.",
+        en: "Direction shapes the impression more than curl strength.",
+      },
+      {
+        kind: "point",
+        title: "손상 관리가 기술입니다",
+        body: "한 번 잘 나온 컬보다 다음 시술까지 자모가 버티는 게 중요합니다. 모질별로 시간과 약제를 나누는 기준이 필요합니다.",
+        en: "What matters is whether the lash survives until the next visit.",
+      },
+      {
+        kind: "close",
+        title: "제품까지 만들었습니다",
+        body: "현장에서 쌓인 데이터로 한국인의 속눈썹 특성을 반영한 펌제 공동 개발에 참여했습니다.",
+        en: "Co-developed a lift solution built for Korean lashes.",
+      },
+    ],
+  },
+  {
+    id: "why-build-glue",
+    caption: `글루를 직접 만들게 된 이유.
+
+교육을 하다 보니 같은 내용을 가르쳐도 결과가 갈렸습니다.
+원인을 따라가 보니 제품이었습니다.
+
+I started teaching. Then I had to build the product.`,
+    hashtags: [
+      "#LED속눈썹연장", "#속눈썹글루", "#속눈썹교육", "#제품개발", "#래쉬아티스트",
+      "#ledlash", "#lashadhesive", "#lashtraining", "#koreanlash", "#lashtech",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        title: "글루를 직접\n만든 이유",
+        subtitle: "교육이 먼저였고, 제품은 그다음이었습니다",
+        en: "Teaching came first. The product followed.",
+      },
+      {
+        kind: "point",
+        title: "결과가 갈렸습니다",
+        body: "같은 기준을 가르쳤는데 어떤 원장님은 4주를 만들고 어떤 원장님은 2주에 무너졌습니다. 손의 문제가 아니었습니다.",
+        en: "Same lesson, different results. It was not the hands.",
+      },
+      {
+        kind: "point",
+        title: "제품이 기준을 못 따라왔습니다",
+        body: "LED 전용이라고 나온 글루들이 경화 조건이 제각각이었습니다. 가르치는 기준이 있어도 재료가 흔들리면 재현이 안 됩니다.",
+        en: "A standard means nothing if the material will not hold it.",
+      },
+      {
+        kind: "point",
+        title: "그래서 만들었습니다",
+        body: "교육 데이터를 근거로 LED 전용 글루와 램프를 개발해 출시했습니다. 지금은 판매보다 수강생 실무 교육을 지원하는 쪽으로 운영합니다.",
+        en: "Built the adhesive and the lamp from teaching data.",
+      },
+      {
+        kind: "close",
+        title: "재현되지 않으면 교육이 아닙니다",
+        body: "배운 사람이 자기 샵에서 같은 결과를 낼 수 있어야 교육입니다. 그때까지 책임지는 게 맞다고 생각합니다.",
+        en: "If it cannot be reproduced, it was not training.",
+      },
+    ],
+  },
+  {
+    id: "one-technique-far",
+    tone: "deep",
+    caption: `기술 하나를 어디까지 끌고 갈 수 있을까요.
+
+시술 메뉴에서 끝내면 유행이 지나면 사라집니다.
+교육하고, 제품으로 만들고, 대회 기준까지 세우면 분야가 됩니다.
+
+Technique → Education → Product → Competition → Contents → Branding`,
+    hashtags: [
+      "#뷰티창업", "#속눈썹교육", "#브랜딩", "#래쉬아티스트", "#원장님공부",
+      "#beautybusiness", "#lasheducator", "#lashartist", "#koreanlash", "#branding",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        title: "기술 하나를\n어디까지",
+        subtitle: "메뉴에서 끝내지 않는 방법",
+        en: "How far can one technique go",
+      },
+      {
+        kind: "point",
+        title: "시술로 끝내면 사라집니다",
+        body: "새 기술을 배워 메뉴에 올리면 그때는 손님이 옵니다. 하지만 남들도 다 하게 되면 가격만 남습니다.",
+        en: "A menu item becomes a price war once everyone has it.",
+      },
+      {
+        kind: "point",
+        title: "가르치면 기준이 생깁니다",
+        body: "남에게 설명하려면 순서를 글로 만들어야 합니다. 그 과정에서 감으로 하던 것이 기준이 됩니다.",
+        en: "Teaching forces instinct to become a written standard.",
+      },
+      {
+        kind: "point",
+        title: "제품이 기준을 지킵니다",
+        body: "기준을 세워도 재료가 흔들리면 재현이 안 됩니다. 필요하면 직접 만들어야 교육이 완성됩니다.",
+        en: "The material has to hold the standard you teach.",
+      },
+      {
+        kind: "point",
+        title: "대회가 기준을 공인합니다",
+        body: "내 기준이 맞다고 혼자 말하는 것과, 심사 기준이 되어 평가되는 것은 다릅니다. 국내 최초로 하이브리드 부문을 개설한 이유입니다.",
+        en: "A standard becomes real when it is used to judge.",
+      },
+      {
+        kind: "close",
+        title: "그래야 분야가 됩니다",
+        body: "기술 → 교육 → 제품 → 대회 → 콘텐츠 → 브랜딩. 이 순서를 한 바퀴 돌면 메뉴가 아니라 분야가 남습니다.",
+        en: "Go around once, and you have a field, not a menu.",
+      },
+    ],
+  },
+  {
+    id: "coaching-competitors",
+    caption: `대회에 나가야 실력이 증명됩니다.
+
+지도한 선수들이 여러 대회에서 1위를 했습니다.
+심사 기준을 아는 사람이 가르치면 결과가 달라집니다.
+
+Artists I've trained have taken first place, repeatedly.`,
+    hashtags: [
+      "#속눈썹대회", "#래쉬아티스트", "#속눈썹교육", "#월드래쉬컵", "#선수지도",
+      "#lashcompetition", "#lashartist", "#lashtraining", "#koreanlash", "#lasheducator",
+    ],
+    slides: [
+      {
+        kind: "cover",
+        title: "대회에 나가야\n증명됩니다",
+        subtitle: "선수 지도에서 실제로 하는 일",
+        en: "Why competition proves what training cannot",
+      },
+      {
+        kind: "point",
+        title: "기준을 먼저 분석합니다",
+        body: "종목마다 보는 것이 다릅니다. 무엇으로 점수가 갈리는지 모르고 연습하면 시간만 씁니다. 심사 경험이 여기서 쓰입니다.",
+        en: "Know what is scored before you practice.",
+      },
+      {
+        kind: "point",
+        title: "선수마다 전략이 다릅니다",
+        body: "손이 빠른 선수와 정교한 선수는 다른 작품을 준비해야 합니다. 잘하는 것을 밀어주는 편이 약점을 메우는 것보다 빠릅니다.",
+        en: "Play to what the artist already does well.",
+      },
+      {
+        kind: "point",
+        title: "디자인 밸런스를 봅니다",
+        body: "기술이 아무리 깨끗해도 모델 얼굴에 맞지 않으면 설득이 안 됩니다. 대회에서도 결국 아이디자인이 평가됩니다.",
+        en: "Clean work still loses if the design ignores the face.",
+      },
+      {
+        kind: "close",
+        title: "결과로 증명되게",
+        body: "가르치는 것에서 끝내지 않고, 객관적인 무대에서 자기 기술을 증명할 수 있게 하는 것이 목표입니다.",
+        en: "Training should end on a stage, not in a classroom.",
       },
     ],
   },
