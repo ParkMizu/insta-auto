@@ -86,6 +86,7 @@ export const PHOTOS: Photo[] = [
   { id: "76", what: "실습 중 서로 봐주는 장면", use: "teaching" },
   { id: "77", what: "실습 지도 — 여럿이 둘러서서 보는 장면", use: "teaching" },
   { id: "80", what: "시술 결과 — 뿌리까지 선명한 클로즈업", use: "result" },
+  { id: "82", what: "17번에서 한쪽 눈만 잘라낸 것 — 컬이 보이는 눈매", use: "result" },
   { id: "81", what: "80번에서 속눈썹만 잘라낸 것 — 결과 클로즈업 (scripts-crop.mjs로 만듦)", use: "result" },
 ];
 
