@@ -87,70 +87,6 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
-    id: "who-is-miju",
-    tone: "deep",
-    caption: `속눈썹을 17년 했습니다.
-
-그중 13년은 제 샵을 운영했고, 지금은 청담 위닛 아이디자인에서
-시술과 교육, 기술 개발을 함께 하고 있습니다.
-
-기술 하나를 배우고 끝내지 않았습니다.
-연구해서 가르치고, 제품으로 만들고, 대회 기준까지 만들었습니다.
-
-17 years in this industry. 13 of them running my own studio.
-I don't stop at learning a technique — I teach it, build the product,
-and help set the standard it's judged by.`,
-    hashtags: [
-      "#속눈썹연장", "#속눈썹교육", "#LED속눈썹연장", "#래쉬아티스트", "#아이디자인",
-      "#lashartist", "#lasheducator", "#koreanlash", "#eyedesign", "#lashtraining",
-    ],
-    slides: [
-      {
-        kind: "cover",
-        photo: "02",
-        title: "17년,\n그리고 지금",
-        subtitle: "박미주 · 아이디자이너 · 래쉬 교육자",
-        en: "MIJU PARK — Eye Designer, Lash Educator",
-      },
-      {
-        kind: "point",
-        title: "현장에서 시작했습니다",
-        body: "주노헤어 매장 관리와 메이크업으로 시작해, 아미주라는 이름으로 13년간 제 샵을 운영했습니다. 지금 가르치는 모든 기준은 책이 아니라 그 의자에서 나왔습니다.",
-        en: "Every standard I teach came from 13 years in my own chair.",
-      },
-      {
-        kind: "point",
-        title: "국내 LED 1세대입니다",
-        body: "LED 속눈썹 연장이 한국에 막 들어오던 때부터 연구하고 가르쳤습니다. 램프 쓰는 법이 아니라 광경화 원리, 조사 거리, 글루량까지 기준을 세우는 교육을 합니다.",
-        en: "First-generation LED lash educator in Korea.",
-      },
-      {
-        kind: "point",
-        title: "없던 기술을 만들었습니다",
-        body: "연장 후 펌을 결합한 복합 시술을 국내에서 처음 개발해 가르쳤고, 이것을 하이브리드 래쉬 디자인이라는 분야로 발전시켰습니다.",
-        en: "Created the extension-then-lift hybrid method in Korea.",
-      },
-      {
-        kind: "point",
-        title: "제품까지 만들었습니다",
-        body: "교육하면서 쌓인 데이터로 LED 전용 글루와 램프를 직접 개발해 출시했고, 한국인 모질에 맞춘 펌제 공동 개발에도 참여했습니다.",
-        en: "Developed LED adhesive, LED lamp, and co-developed a lift solution.",
-      },
-      {
-        kind: "point",
-        title: "기준을 만드는 자리에 있습니다",
-        body: "싱가포르와 일본 NEEC 국제 대회 심사위원, 한국 월드래쉬컵 LED 분과장을 맡았습니다. 국내 최초로 하이브리드 래쉬 부문을 개설해 평가 기준을 세웠습니다.",
-        en: "International judge in Singapore and Japan. Opened Korea's first Hybrid Lash division.",
-      },
-      {
-        kind: "close",
-        title: "그래서 가르칩니다",
-        body: "기술이 저 하나로 끝나면 아무것도 아닙니다. 위닛 크루에서 원장님들과 함께 기준을 퍼뜨리고 있습니다.",
-        en: "A technique that stops with me is worth nothing.",
-      },
-    ],
-  },
-  {
     id: "led-distance",
     caption: `LED 글루가 안 굳는다고 램프를 바꾸기 전에.
 
@@ -167,7 +103,7 @@ Before you blame the lamp — did you measure the distance?`,
     slides: [
       {
         kind: "cover",
-        photo: "18",
+        photo: "46",
         title: "램프를 바꾸기 전에\n거리를 재세요",
         subtitle: "LED 경화의 첫 번째 기준",
         en: "Measure the distance before blaming the lamp",
@@ -378,28 +314,28 @@ One good set says more than a hundred words. Judge it at week three.`,
     slides: [
       {
         kind: "cover",
-        photo: "17",
+        photo: "73",
         title: "결과로\n말합니다",
         subtitle: "3주 뒤에 보는 눈매",
         en: "Judged at week three",
       },
       {
         kind: "photo",
-        photo: "07",
+        photo: "74",
         title: "한 올씩 봅니다",
         body: "자모 하나에 가모 하나. 간격과 방향이 흐트러지면 아무리 예뻐도 오래 못 갑니다.",
         en: "One extension per natural lash. Spacing and direction decide the rest.",
       },
       {
         kind: "photo",
-        photo: "18",
+        photo: "72",
         title: "빛으로 굳힙니다",
         body: "LED는 빨리 굳는 게 아니라 원하는 때에 굳게 만드는 기술입니다. 조사 거리와 시간이 기준입니다.",
         en: "LED is not about speed. It is about curing on your terms.",
       },
       {
         kind: "photo",
-        photo: "03",
+        photo: "71",
         title: "얼굴에서 봅니다",
         body: "눈만 보고 만든 디자인은 눈만 예쁩니다. 얼굴 전체에서 눈이 어떤 무게를 갖는지가 인상을 정합니다.",
         en: "A design made for the eye alone flatters only the eye.",
@@ -427,21 +363,21 @@ Teaching is the hardest part. What I teach gets repeated every day, by others.`,
     slides: [
       {
         kind: "cover",
-        photo: "10",
+        photo: "39",
         title: "가르치는 일이\n제일 어렵습니다",
         subtitle: "매일 반복될 기술을 넘기는 일",
         en: "Why teaching is the hardest part",
       },
       {
         kind: "photo",
-        photo: "01",
+        photo: "41",
         title: "설명할 수 있어야 기술입니다",
         body: "손으로는 되는데 말로 안 되는 건 아직 기술이 아니라 습관입니다. 가르치려면 순서를 글로 만들어야 합니다.",
         en: "If you cannot explain it, it is a habit, not a technique.",
       },
       {
         kind: "photo",
-        photo: "04",
+        photo: "75",
         title: "매번 새로 씁니다",
         body: "같은 과정이어도 오는 분들이 다릅니다. 어디서 막히는지가 다르니 그때마다 자료를 고칩니다.",
         en: "Same course, different people. The material changes every time.",
@@ -482,7 +418,7 @@ Artists I've trained have taken first place, repeatedly.`,
     slides: [
       {
         kind: "cover",
-        photo: "11",
+        photo: "40",
         title: "대회에 나가야\n증명됩니다",
         subtitle: "선수 지도에서 실제로 하는 일",
         en: "Why competition proves what training cannot",
@@ -528,7 +464,7 @@ The best lash artists spend three minutes before they touch a single lash.`,
     slides: [
       {
         kind: "cover",
-        photo: "16",
+        photo: "49",
         title: "상담 3분이\n재방문을 만든다",
         subtitle: "앉히자마자 물어야 할 것",
         en: "Three minutes that bring them back",
@@ -581,7 +517,7 @@ It is not the technique. It is the standard.`,
     slides: [
       {
         kind: "cover",
-        photo: "05",
+        photo: "80",
         title: "한국 속눈썹은\n무엇이 다른가",
         subtitle: "해외에서 가장 많이 묻는 질문",
         en: "What makes Korean lash different",
@@ -728,6 +664,7 @@ Why we call it the Korean method — the hair itself is different.`,
     slides: [
       {
         kind: "cover",
+        photo: "03",
         title: "왜 한국식\n노글루인가",
         subtitle: "2018년부터 전국을 돌며 가르친 이유",
         en: "Why the Korean no-glue method exists",
@@ -836,7 +773,7 @@ REFRAME — an eye design system built on facial structure diagnosis.`,
     slides: [
       {
         kind: "cover",
-        photo: "03",
+        photo: "17",
         title: "눈만 보면\n디자인이 안 나옵니다",
         subtitle: "REFRAME — 골격에서 시작하는 아이디자인",
         en: "REFRAME — Eye design starts with the face",
