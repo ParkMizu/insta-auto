@@ -1,3 +1,8 @@
+/* eslint-disable @next/next/no-img-element --
+ * 여기 이미지는 /api/slide가 그때그때 그려내는 PNG다. next/image로 감싸면
+ * 이미 만들어진 PNG를 Vercel이 한 번 더 최적화하면서 비용만 늘고 얻는 게 없다.
+ * 미리보기 전용 화면이라 LCP도 신경 쓸 대상이 아니다.
+ */
 /**
  * 미리보기 화면 — 원장님이 결과를 눈으로 확인하는 곳이다.
  *
