@@ -11,7 +11,7 @@
 export const BRAND = {
   handle: "@amiju____",
   /** 해외 계정에 노출될 때의 한 줄. 프로필 이름에도 같은 문구를 쓰는 게 좋다 */
-  nameEn: "Korean Lash Artist · Seoul",
+  nameEn: "Eye Designer · Lash Educator · Seoul",
   /** 표지 맨 위 분류. 시리즈를 나누려면 글마다 바꿔도 된다 */
   eyebrow: "LASH EDUCATION",
 
