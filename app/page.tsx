@@ -11,6 +11,7 @@
  */
 import { BRAND } from "@/content/brand";
 import { schedule } from "@/lib/queue";
+import { HIGHLIGHTS } from "@/content/highlights";
 
 export const metadata = { title: "피드 미리보기" };
 
@@ -30,6 +31,38 @@ export default function PreviewPage() {
           위에서부터 하나씩 나갑니다. {queue.length ? `첫 글은 ${queue[0].date}, 마지막은 ${queue[queue.length - 1].date}입니다.` : ""}
         </p>
       </header>
+
+      <section className="mb-16">
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-neutral-400">
+          하이라이트 커버
+        </h2>
+        <p className="mb-4 text-sm text-neutral-500">
+          이미지를 저장해 스토리로 올린 뒤 하이라이트 커버로 지정하세요. 인스타가 원형으로
+          자르기 때문에 글자는 가운데에만 뒀습니다.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          {HIGHLIGHTS.map((h) => (
+            <a
+              key={h.key}
+              href={`/api/highlight/${h.key}`}
+              download={`highlight-${h.key}.png`}
+              className="group flex w-24 flex-col items-center gap-2"
+            >
+              {/* 프로필에서 보이는 그대로 원형으로 잘라 보여준다 */}
+              <span className="block h-24 w-24 overflow-hidden rounded-full border border-neutral-200">
+                <img
+                  src={`/api/highlight/${h.key}`}
+                  alt={h.title}
+                  className="h-full w-full object-cover"
+                />
+              </span>
+              <span className="text-center text-[11px] leading-tight text-neutral-500 group-hover:text-neutral-800">
+                {h.title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
 
       <section className="mb-16">
         <h2 className="mb-4 text-sm font-semibold uppercase tracking-widest text-neutral-400">
