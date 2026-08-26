@@ -23,8 +23,15 @@ export interface CoverSlide {
    * 글이 묻히지 않게 어두운 막을 자동으로 덮는다.
    */
   photo?: string;
-  /** 4:5로 자를 때 남길 부분. 얼굴이나 눈이 잘리면 조정한다 */
-  photoPosition?: "top" | "center" | "bottom";
+  /**
+   * 4:5로 자를 때 남길 부분. 얼굴이나 눈이 잘리면 조정한다.
+   * "center" 같은 말 대신 "45% 50%"처럼 좌표로 줄 수도 있다 — 확대할 때 필요하다.
+   */
+  photoPosition?: string;
+  /**
+   * 확대는 여기서 못 한다. 배율을 주면 캐러셀 엔진이 사진을 타일처럼 반복한다.
+   * 더 당겨 보고 싶으면 scripts-crop.mjs로 사진을 잘라 새 번호로 만들어 쓸 것.
+   */
   /**
    * 글자를 판의 위쪽에 앉힌다.
    *
@@ -563,91 +570,51 @@ The best lash artists spend three minutes before they touch a single lash.`,
     ],
   },
   {
-    id: "korean-lash-why",
-    caption: `한국 속눈썹이 왜 다른가요?
+    id: "why-led",
+    caption: `LED 속눈썹, 무엇이 다른가요.
 
-해외 원장님들께 가장 많이 받는 질문입니다.
-기법이 아니라 기준이 다릅니다.
+해외에서 오신 원장님들께 가장 많이 받는 질문입니다.
+빨리 끝나서가 아니라, 굳는 순간을 제가 정할 수 있어서입니다.
 
-The most common question I get from artists abroad.
-It is not the technique. It is the standard.`,
-    hashtags: ["#속눈썹연장", "#속눈썹교육", "#케이뷰티", "#koreanlash", "#kbeauty"],
+The question I get most from artists abroad — what LED actually changes.`,
+    hashtags: ["#LED속눈썹연장", "#속눈썹교육", "#케이뷰티", "#ledlash", "#koreanlash"],
     slides: [
       {
         kind: "cover",
-        photo: "80",
-        title: "한국 속눈썹은\n무엇이 다른가",
-        subtitle: "해외에서 가장 많이 묻는 질문",
-        en: "What makes Korean lash different",
+        photo: "81",
+        title: "LED 속눈썹은\n무엇이 다른가",
+        subtitle: "해외에서 가장 많이 묻는 것",
+        en: "What LED actually changes",
       },
       {
         kind: "point",
-        title: "손님 속눈썹을 먼저 봅니다",
-        body: "디자인을 정해두고 거기에 속눈썹을 맞추는 게 아니라, 손님 속눈썹을 보고 가능한 디자인을 정합니다.",
-        en: "We read the natural lash first, then decide the design.",
+        title: "기다리지 않습니다",
+        body: "일반 글루는 공기 중 수분으로 굳습니다. 그래서 그날 습도가 시술 속도를 정합니다. LED는 빛을 비출 때 굳으니 그 조건에서 자유롭습니다.",
+        en: "Regular adhesive cures with moisture in the air. LED cures when the light says so.",
       },
       {
         kind: "point",
-        title: "티가 나지 않게",
-        body: "한국 고객은 '했는데 안 한 것 같은' 결과를 원합니다. 그래서 두께보다 방향과 결을 맞추는 데 시간을 씁니다.",
-        en: "The goal is direction and flow, not thickness.",
+        title: "굳는 순간을 정합니다",
+        body: "붙이고 나서 방향을 한 번 더 볼 수 있습니다. 확인하고 굳히니 서로 다른 쪽을 보는 속눈썹이 줄어듭니다.",
+        en: "You can check the direction once more before it sets.",
       },
       {
         kind: "point",
-        title: "유지 기간이 기준",
-        body: "끝난 직후 사진이 아니라 3주 뒤 모습으로 판단합니다. 그래서 오래 가게 만드는 법이 기본 과정에 들어갑니다.",
-        en: "We judge the work at week three, not on day one.",
+        title: "손님이 느끼는 차이",
+        body: "굳히는 동안 기다리는 시간이 줄어듭니다. 다만 빨리 끝나는 것 자체가 목적은 아닙니다. 급하게 붙이면 LED라도 결과는 같이 나빠집니다.",
+        en: "Less waiting. But speed was never the point.",
+      },
+      {
+        kind: "point",
+        title: "대신 기준이 필요합니다",
+        body: "램프와의 거리, 비추는 시간, 글루의 양이 서로 물려 있습니다. 이 셋을 각자 감으로 하면 같은 램프를 써도 결과가 갈립니다.",
+        en: "Distance, time, and adhesive amount all move together.",
       },
       {
         kind: "close",
         title: "배우러 오시는 분들께",
-        body: "한국식 기준을 처음부터 정리해서 가르칩니다. 영어 통역이 필요한 분은 DM으로 문의 주세요.",
-        en: "Training available for international artists. DM for details.",
-      },
-    ],
-  },
-  {
-    id: "judge-view",
-    tone: "deep",
-    caption: `심사위원석에서는 다르게 보입니다.
-
-싱가포르와 일본 NEEC에서 심사를 하고,
-한국 월드래쉬컵에서 LED 분과를 맡으면서 알게 된 것.
-
-점수는 화려함이 아니라 일관성에서 갈립니다.
-
-What I learned from the judge's seat: consistency wins, not flash.`,
-    hashtags: ["#속눈썹대회", "#월드래쉬컵", "#심사위원", "#lashcompetition", "#koreanlash"],
-    slides: [
-      {
-        kind: "cover",
-        title: "심사위원석에서는\n다르게 보입니다",
-        subtitle: "대회가 알려주는 실력의 기준",
-        en: "What the judge's seat teaches you",
-      },
-      {
-        kind: "point",
-        title: "화려함은 오래 못 갑니다",
-        body: "첫눈에 눈길을 끄는 작품이 점수에서 밀리는 일이 자주 있습니다. 심사는 가까이서 오래 봅니다. 그때 남는 건 균일함입니다.",
-        en: "Judges look closely, for a long time. Evenness is what survives.",
-      },
-      {
-        kind: "point",
-        title: "간격이 실력입니다",
-        body: "속눈썹 사이 간격, 뿌리에서 띄운 거리, 방향이 고른가. 이 셋이 흔들리면 아무리 예쁜 디자인도 점수가 깎입니다.",
-        en: "Spacing, root distance, direction. Three things that never lie.",
-      },
-      {
-        kind: "point",
-        title: "디자인은 얼굴과 맞아야 합니다",
-        body: "모델 얼굴에 맞지 않는 디자인은 기술이 좋아도 설득이 안 됩니다. 대회에서도 결국 아이디자인이 평가됩니다.",
-        en: "A design that ignores the face cannot win, however clean.",
-      },
-      {
-        kind: "close",
-        title: "그래서 선수를 지도합니다",
-        body: "심사 기준을 아는 사람이 가르치면 결과가 달라집니다. 지도한 선수들이 여러 대회에서 1위를 했습니다.",
-        en: "Artists I've trained have taken first place, repeatedly.",
+        body: "기계가 아니라 조건을 배우는 과정입니다. 영어 통역이 필요하시면 디엠으로 문의 주세요.",
+        en: "You are learning conditions, not a device. DM for international training.",
       },
     ],
   },
