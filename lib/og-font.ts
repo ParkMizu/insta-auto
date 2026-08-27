@@ -1,16 +1,19 @@
 /**
- * OG 이미지에 한글을 그리기 위한 폰트 로더.
+ * 브랜드 폰트 로더 — Freesentation.
  *
- * next/og(satori)는 woff2를 못 읽고, Noto Sans KR 전체 TTF는 웨이트당 5MB가 넘는다.
- * 그래서 Google Fonts에 "이 글자들만" 요청해서 몇 KB짜리 서브셋 TTF를 받는다.
- * 서브셋을 그릴 문자로 만들기 때문에, 나중에 타입 이름을 바꿔도 두부(□)가 뜨지 않는다.
+ * 위닛 아이디자인 브랜드 가이드가 지정한 서체다. Noto Sans(한글)와 Heebo(영문)를
+ * 다시 다듬어 만든 것이라 한글이 안정적이고, SIL OFL이라 상업 사용에 문제가 없다.
  *
- * 브라우저 UA로 요청하면 woff/woff2가 오므로, 일부러 브라우저가 아닌 UA를 보낸다.
+ * 예전에는 Google Fonts에서 필요한 글자만 서브셋으로 받아 썼다. Freesentation은
+ * 거기 없어서 파일을 저장소에 넣고 직접 읽는다. 한 벌이 2.5MB쯤이라 매번 내려받으면
+ * 슬라이드를 그릴 때마다 느려진다. 그래서 한 번 읽어 메모리에 들고 있는다.
+ *
+ * 브랜드 가이드의 국문 사용 규칙:
+ *   헤드라인 ExtraBold · 서브타이틀 SemiBold · 바디 Medium · 캡션 Light (행간 150%)
+ * 여기서는 굵기 두 벌만 쓴다. 슬라이드가 제목과 본문으로만 나뉘기 때문이다.
  */
-
-const CSS_ENDPOINT = "https://fonts.googleapis.com/css2";
-/** 브라우저가 아닌 UA여야 Google이 TTF를 준다 */
-const NON_BROWSER_UA = "insta-auto-og/1.0";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 export interface OgFont {
   name: string;
@@ -19,60 +22,39 @@ export interface OgFont {
   style: "normal";
 }
 
-/** 같은 문자 조합은 다시 받지 않는다. 서버 인스턴스가 살아있는 동안만 유지된다. */
-const cache = new Map<string, OgFont[]>();
+const FILES: { file: string; weight: 400 | 700 }[] = [
+  { file: "Freesentation-5Medium.ttf", weight: 400 },
+  { file: "Freesentation-8ExtraBold.ttf", weight: 700 },
+];
 
-/** css2 응답에서 @font-face 블록별 (weight, url)을 뽑는다 */
-function parseFaces(css: string): { weight: number; url: string }[] {
-  return css
-    .split("@font-face")
-    .slice(1)
-    .flatMap((block) => {
-      const weight = block.match(/font-weight:\s*(\d+)/)?.[1];
-      const url = block.match(/src:\s*url\(([^)]+)\)/)?.[1];
-      return weight && url ? [{ weight: Number(weight), url }] : [];
-    });
-}
+let cached: OgFont[] | null = null;
 
 /**
- * 주어진 문자열들에 나오는 글자만 담은 400/700 서브셋을 받는다.
- * 네트워크가 막히면 빈 배열 — 호출하는 쪽에서 라틴 폴백으로 그린다.
+ * 브랜드 폰트를 돌려준다.
+ *
+ * 인자를 받지 않는다. 예전 서브셋 방식은 그릴 글자를 알아야 했지만
+ * 이제는 한 벌을 통째로 쓰므로 필요 없다. 호출부 호환을 위해 인자는 무시한다.
  */
-export async function loadKoreanFonts(texts: string[]): Promise<OgFont[]> {
-  // 중복 글자를 지워야 요청 URL이 짧아지고 캐시 적중률이 올라간다
-  const chars = [...new Set(texts.join(""))].sort().join("");
-  if (!chars) return [];
-
-  const cached = cache.get(chars);
+export async function loadKoreanFonts(_texts?: string[]): Promise<OgFont[]> {
   if (cached) return cached;
-
   try {
-    const cssUrl = `${CSS_ENDPOINT}?family=Noto+Sans+KR:wght@400;700&text=${encodeURIComponent(chars)}`;
-    const cssRes = await fetch(cssUrl, {
-      headers: { "User-Agent": NON_BROWSER_UA },
-    });
-    if (!cssRes.ok) return [];
-
-    const faces = parseFaces(await cssRes.text());
+    const dir = path.join(process.cwd(), "assets", "fonts");
     const fonts = await Promise.all(
-      faces
-        .filter((f) => f.weight === 400 || f.weight === 700)
-        .map(async (face): Promise<OgFont> => {
-          const res = await fetch(face.url);
-          if (!res.ok) throw new Error(`폰트 내려받기 실패: ${res.status}`);
-          return {
-            name: "Noto Sans KR",
-            data: await res.arrayBuffer(),
-            weight: face.weight as 400 | 700,
-            style: "normal",
-          };
-        }),
+      FILES.map(async ({ file, weight }): Promise<OgFont> => {
+        const buf = await readFile(path.join(dir, file));
+        return {
+          name: "Freesentation",
+          // Buffer의 일부일 수 있어 실제 구간만 잘라 넘긴다
+          data: buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength) as ArrayBuffer,
+          weight,
+          style: "normal",
+        };
+      }),
     );
-
-    cache.set(chars, fonts);
+    cached = fonts;
     return fonts;
   } catch {
-    // OG 이미지 때문에 페이지가 죽으면 안 된다. 폰트 없이 그리게 둔다.
+    // 폰트를 못 읽어도 슬라이드는 그려야 한다. 라틴 기본 글꼴로 떨어진다.
     return [];
   }
 }

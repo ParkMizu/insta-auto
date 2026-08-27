@@ -191,7 +191,8 @@ export function renderSlide(
   const coverSplit = coverPhoto ? needsSplit(coverPhoto) : false;
   const textOnPhoto = Boolean(coverPhoto) && !coverSplit;
   const onDark = tone === "deep" || textOnPhoto;
-  const coverBg = onDark ? C.deep : C.nude;
+  // 표지는 포인트 판(샌드), 본문은 여백 배경. 브랜드가 둘을 나눠 정의한다.
+  const coverBg = onDark ? C.deep : C.sand;
   const coverText = textOnPhoto ? "#FFFFFF" : onDark ? C.onDeep : C.onNude;
   const coverMuted = onDark ? C.mutedOnDeep : C.muted;
 
@@ -319,7 +320,7 @@ export function renderSlide(
                 display: "flex",
                 fontSize: T.body,
                 color: "#EFE9E3",
-                lineHeight: 1.6,
+                lineHeight: 1.5,
                 marginTop: 24,
               }}
             >
@@ -392,7 +393,7 @@ export function renderSlide(
                 display: "flex",
                 fontSize: T.body,
                 color: C.onNude,
-                lineHeight: 1.62,
+                lineHeight: 1.5,
                 marginTop: 36,
               }}
             >
@@ -431,7 +432,7 @@ export function renderSlide(
               display: "flex",
               fontSize: T.body,
               color: coverMuted,
-              lineHeight: 1.62,
+              lineHeight: 1.5,
               marginTop: 36,
             }}
           >
