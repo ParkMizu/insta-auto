@@ -105,6 +105,24 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    id: "stuck-alone",
+    caption: `혼자 하다 보면 막히는 지점이 옵니다.
+
+기술이 부족해서가 아니라
+내가 무엇을 잘못하는지 볼 사람이 없어서입니다.
+
+Working alone, you cannot see your own habits.`,
+    hashtags: ["#속눈썹교육", "#래쉬아티스트", "#원장님공부", "#lashtraining", "#koreanlash"],
+    slides: [
+      { kind: "cover", photo: "43", textTop: true, title: "혼자 하다\n막히는 지점", subtitle: "내 손은 내가 못 봅니다", en: "You cannot watch your own hands" },
+      { kind: "point", title: "습관은 안 보입니다", body: "매번 같은 각도로 잡고 있어도 스스로는 모릅니다. 결과가 조금씩 기울어도 그게 원래 내 그림이라고 생각하게 됩니다.", en: "Your own tilt looks like your style." },
+      { kind: "point", title: "물어볼 데가 없습니다", body: "이게 맞는 건지 확인할 사람이 없으면 잘 나온 날과 안 나온 날의 차이를 운으로 넘기게 됩니다.", en: "With no one to ask, good days feel like luck." },
+      { kind: "point", title: "손님은 말해주지 않습니다", body: "불편해도 대부분 그냥 안 오십니다. 그래서 무엇을 고쳐야 하는지 모른 채 손님만 줄어듭니다.", en: "They rarely tell you. They just stop coming." },
+      { kind: "point", title: "옆에서 한 번 보면", body: "몇 년 걸릴 것이 하루에 잡히는 일이 있습니다. 배우는 게 빠른 게 아니라, 보이는 게 빠릅니다.", en: "One session beside you can settle what years did not." },
+      { kind: "close", title: "그래서 크루입니다", body: "가르치고 끝내는 게 아니라 계속 물어볼 수 있는 자리를 만들려고 합니다.", en: "Not a course that ends. A place you can keep asking." },
+    ],
+  },
+  {
     id: "led-distance",
     caption: `LED 글루가 안 굳는다고 램프를 바꾸기 전에.
 
@@ -153,6 +171,24 @@ Before you blame the lamp — did you measure the distance?`,
         body: "감으로도 잘하는 분들이 많습니다. 다만 결과가 흔들렸을 때 어디를 봐야 할지는 원리를 알아야 찾아집니다. 교육에서 이 기준부터 잡는 이유입니다.",
         en: "Instinct works. But when it slips, principle tells you where to look.",
       },
+    ],
+  },
+  {
+    id: "first-visit",
+    caption: `처음 오신 손님께는 조금 천천히 갑니다.
+
+이 분이 무엇을 기대하고 오셨는지 모르는 채로 시작하면
+끝나고 나서 서로 다른 이야기를 하게 됩니다.
+
+With a first-time client, I slow down before I start.`,
+    hashtags: ["#속눈썹연장", "#고객관리", "#청담속눈썹", "#lashartist", "#koreanlash"],
+    slides: [
+      { kind: "cover", photo: "16", textTop: true, title: "처음 오신\n손님께는", subtitle: "시작 전에 천천히 가는 이유", en: "Before the first set" },
+      { kind: "point", title: "어디서 보고 오셨는지", body: "사진을 보고 오신 분과 소개로 오신 분은 기대가 다릅니다. 무엇을 보고 오셨는지 알면 어디를 맞춰야 할지 보입니다.", en: "What they saw before coming tells you what they expect." },
+      { kind: "point", title: "지난번 경험을 묻습니다", body: "처음이 아닌 경우가 많습니다. 어디가 불편했는지 들으면 이번에 피해야 할 것이 정해집니다.", en: "Ask what went wrong last time." },
+      { kind: "point", title: "안 되는 것을 먼저", body: "원하시는 만큼 안 나올 수 있다면 시작 전에 말씀드립니다. 끝나고 말하면 변명이 됩니다.", en: "Say what is not possible before you start." },
+      { kind: "point", title: "다음 약속까지", body: "언제쯤 오시면 좋은지 나가시기 전에 정합니다. 늦게 오시면 결과가 나빠지고, 그건 서로 손해입니다.", en: "Set the next visit before they leave." },
+      { kind: "close", title: "3분이 3주를 정합니다", body: "시작 전 대화가 시술만큼 결과를 정합니다. 손이 아니라 여기서 갈리는 경우가 많습니다.", en: "The three minutes before decide the three weeks after." },
     ],
   },
   {
@@ -635,6 +671,7 @@ Technique → Education → Product → Competition → Contents → Branding`,
       {
         kind: "cover",
         photo: "01",
+        textTop: true,
         title: "기술 하나를\n어디까지",
         subtitle: "메뉴에서 끝내지 않는 방법",
         en: "How far can one technique go",
@@ -668,99 +705,6 @@ Technique → Education → Product → Competition → Contents → Branding`,
         title: "그래야 분야가 됩니다",
         body: "기술 → 교육 → 제품 → 대회 → 콘텐츠 → 브랜딩. 이 순서를 한 바퀴 돌면 메뉴가 아니라 분야가 남습니다.",
         en: "Go around once, and you have a field, not a menu.",
-      },
-    ],
-  },
-  {
-    id: "why-korean-lift",
-    caption: `노글루 리프트를 왜 "한국식"이라고 부르는가.
-
-2018년부터 전국을 돌며 가르쳤습니다.
-밖에서 배운 방식을 그대로 쓰면 한국 손님 속눈썹에서는 결과가 달랐기 때문입니다.
-
-Why we call it the Korean method — the hair itself is different.`,
-    hashtags: ["#속눈썹펌", "#래쉬리프트", "#노글루", "#lashlift", "#koreanlash"],
-    slides: [
-      {
-        kind: "cover",
-        photo: "03",
-        title: "왜 한국식\n노글루인가",
-        subtitle: "2018년부터 전국을 돌며 가르친 이유",
-        en: "Why the Korean no-glue method exists",
-      },
-      {
-        kind: "point",
-        title: "속눈썹부터 다릅니다",
-        body: "한국 사람 속눈썹은 굵고 곧게 자라는 경우가 많습니다. 밖에서 쓰던 시간과 약을 그대로 쓰면 컬이 덜 잡히거나 반대로 상합니다.",
-        en: "Straighter, thicker hair does not respond to imported timing.",
-      },
-      {
-        kind: "point",
-        title: "방향이 먼저입니다",
-        body: "컬을 얼마나 세우느냐보다 어느 방향으로 눕히느냐가 인상을 만듭니다. 눈매에 따라 같은 컬도 다르게 보입니다.",
-        en: "Direction shapes the impression more than curl strength.",
-      },
-      {
-        kind: "point",
-        title: "손상 관리가 기술입니다",
-        body: "한 번 잘 나온 컬보다 다음에 오실 때까지 속눈썹이 버텨주는 게 중요합니다. 속눈썹 상태에 따라 시간과 약을 나누는 기준이 필요합니다.",
-        en: "What matters is whether the lash survives until the next visit.",
-      },
-      {
-        kind: "close",
-        title: "제품까지 만들었습니다",
-        body: "현장에서 쌓인 데이터로 한국인의 속눈썹 특성을 반영한 펌제 공동 개발에 참여했습니다.",
-        en: "Co-developed a lift solution built for Korean lashes.",
-      },
-    ],
-  },
-  {
-    id: "to-shanghai",
-    tone: "deep",
-    caption: `청담에서 시작해서 어디까지 갈 수 있을까요.
-
-기술과 교육, 제품과 살롱을 하나로 묶어
-일본과 상하이를 시작으로 넓혀가고 있습니다.
-
-From Cheongdam to Shanghai — technique, education, product, salon as one.`,
-    hashtags: ["#위닛아이디자인", "#케이뷰티", "#속눈썹교육", "#kbeauty", "#koreanlash"],
-    slides: [
-      {
-        kind: "cover",
-        photo: "15",
-        title: "청담에서\n상하이까지",
-        subtitle: "기술 하나로 어디까지 갈 수 있는가",
-        en: "From Cheongdam to Shanghai",
-      },
-      {
-        kind: "point",
-        title: "기사가 먼저 알렸습니다",
-        body: "위닛 아이디자인을 시술 브랜드가 아니라 교육·제품·콘텐츠와 살롱을 잇는 브랜드로 키운다는 계획이 매일경제에 실렸습니다.",
-        en: "The plan was covered before it was finished.",
-      },
-      {
-        kind: "point",
-        title: "네 가지를 함께 가져갑니다",
-        body: "기술만 수출하면 한 번으로 끝납니다. 기술과 교육, 제품과 살롱 운영을 같이 묶어야 현지에서 굴러갑니다.",
-        en: "Technique alone travels once. A system travels further.",
-      },
-      {
-        kind: "point",
-        title: "교육이 먼저 갑니다",
-        body: "현지 아티스트가 같은 기준으로 시술할 수 있어야 브랜드가 유지됩니다. 그래서 살롱보다 교육이 앞섭니다.",
-        en: "Education goes first, then the salon.",
-      },
-      {
-        kind: "point",
-        title: "일본과 상하이부터",
-        body: "가까운 시장에서 기준이 통하는지 먼저 확인하고, 동남아까지 넓혀갈 계획입니다.",
-        en: "Japan and Shanghai first, then Southeast Asia.",
-      },
-      {
-        kind: "close",
-        title: "함께 갈 원장님을 찾습니다",
-        body: "혼자 나가는 것보다 크루로 나가는 편이 멀리 갑니다. 위닛 크루에서 같이 준비하고 있습니다.",
-        en: "We are going as a crew, not alone.",
       },
     ],
   },
@@ -836,21 +780,56 @@ If the adhesive behaves differently today, check storage first.`,
     ],
   },
   {
-    id: "lamp-care",
-    caption: `램프도 나이를 먹습니다.
+    id: "who-teaches",
+    caption: `위닛 크루는 누가 가르치나요.
 
-같은 자리에서 같은 시간을 비췄는데 예전 같지 않다면
-램프 상태를 한 번 보실 때입니다.
+크루 강사도 바로 강단에 서지 않습니다.
+충분히 연습하고, 같은 기준으로 피드백하는 연습까지 거칩니다.
 
-Lamps age. Same distance, same time, different result.`,
-    hashtags: ["#LED속눈썹연장", "#속눈썹교육", "#유지력", "#ledlash", "#koreanlash"],
+어느 강사에게 배우셔도 같은 교육과 같은 피드백을 받으시는 것.
+그게 저희가 만들어가는 원칙입니다.
+
+Every crew instructor trains before they teach.`,
+    hashtags: ["#위닛크루", "#속눈썹교육", "#래쉬아티스트", "#lasheducation", "#koreanlash"],
     slides: [
-      { kind: "cover", photo: "44", title: "램프도\n나이를 먹습니다", subtitle: "예전 같지 않다고 느낄 때", en: "Lamps age too" },
-      { kind: "point", title: "렌즈가 흐려집니다", body: "시술하면서 글루 성분이 미세하게 튑니다. 눈에 잘 안 보여도 빛이 지나가는 길이 조금씩 가려집니다.", en: "Residue builds on the lens, quietly." },
-      { kind: "point", title: "닦는 것도 순서가 있습니다", body: "마른 천으로 문지르면 흠집이 납니다. 흠집도 빛을 흩습니다. 부드러운 천으로 결을 따라 닦습니다.", en: "Scratches scatter light as much as residue does." },
-      { kind: "point", title: "광량은 서서히 떨어집니다", body: "고장이 나서 멈추는 게 아니라 조금씩 약해집니다. 그래서 알아차리기 어렵고, 손이 문제인 줄 알게 됩니다.", en: "It fades gradually, so you blame your hands." },
-      { kind: "point", title: "기준을 하나 정해두세요", body: "같은 조건에서 굳는 시간이 예전보다 길어졌다면 신호입니다. 감으로 넘기지 말고 적어두면 보입니다.", en: "If cure time creeps up under the same setup, that is your signal." },
-      { kind: "close", title: "도구도 관리 대상입니다", body: "재료와 손만 보지 말고 도구도 같이 봅니다. 셋 중 하나만 흔들려도 결과는 흔들립니다.", en: "Material, hands, tools. All three." },
+      {
+        kind: "cover",
+        photo: "77",
+        textTop: true,
+        title: "누가\n가르치는가",
+        subtitle: "크루 강사가 되기까지",
+        en: "Who teaches at WENEED CREW",
+      },
+      {
+        kind: "point",
+        title: "바로 가르치지 않습니다",
+        body: "시술을 잘하신다고 다음 날부터 강사가 되지 않습니다. 크루 강사도 충분히 연습하는 기간을 거친 뒤에 강단에 섭니다.",
+        en: "Being good with your hands does not make you an instructor the next day.",
+      },
+      {
+        kind: "point",
+        title: "잘하는 것과 가르치는 것",
+        body: "손으로는 되는데 말로 안 되는 구간이 누구에게나 있습니다. 그 구간을 글로 만들어보는 것이 강사 준비의 절반입니다.",
+        en: "Everyone has a part their hands know but their words do not.",
+      },
+      {
+        kind: "point",
+        title: "같은 기준으로 봅니다",
+        body: "같은 작품을 보고 서로 다른 지적을 하면 배우시는 분이 혼란스럽습니다. 무엇을 먼저 보고 어떻게 말할지를 맞춥니다.",
+        en: "If two instructors flag different things, the student is the one who suffers.",
+      },
+      {
+        kind: "point",
+        title: "피드백도 연습입니다",
+        body: "틀렸다고 말하는 건 쉽습니다. 어디를 어떻게 고치면 되는지, 왜 그런지까지 전하는 것은 따로 연습해야 합니다.",
+        en: "Saying it is wrong is easy. Saying how and why takes practice.",
+      },
+      {
+        kind: "close",
+        title: "만들어가는 중입니다",
+        body: "아직 완성된 시스템이라고 말씀드리지는 못합니다. 다만 어느 자리에서 배우셔도 같은 교육을 받으시게 하는 것, 그 원칙만은 지키고 있습니다.",
+        en: "Not finished yet. But the principle holds — same training, whoever teaches it.",
+      },
     ],
   },
   {
@@ -926,21 +905,62 @@ When the curl relaxes, it is usually neither side's fault.`,
     ],
   },
   {
-    id: "root-distance",
-    caption: `뿌리에서 얼마나 띄우시나요.
+    id: "lash-flow",
+    caption: `디자인이 안 나온다면 결을 보실 때입니다.
 
-너무 붙이면 자극이 되고, 너무 띄우면 들뜹니다.
-0.5mm라는 숫자보다 왜 그 숫자인지가 중요합니다.
+속눈썹 연장은 그냥 붙이는 일이 아닙니다.
+손님 속눈썹이 흐르는 방향과, 붙이는 속눈썹 자체의 결.
+이 둘이 맞아야 디자인이 됩니다.
 
-How far from the root? The number matters less than why.`,
-    hashtags: ["#속눈썹연장", "#속눈썹교육", "#유지력", "#lashtraining", "#koreanlash"],
+왕홍 스타일을 어려워하시는 분들이 많은데,
+대부분 이 결을 읽는 데서 막힙니다.
+
+Design is not placement. It is reading two flows at once.`,
+    hashtags: ["#속눈썹연장", "#눈매디자인", "#속눈썹교육", "#lashdesign", "#koreanlash"],
     slides: [
-      { kind: "cover", photo: "74", title: "뿌리에서\n얼마나 띄우나", subtitle: "숫자보다 이유가 먼저", en: "The gap at the root" },
-      { kind: "point", title: "너무 붙으면", body: "피부에 닿으면 따갑고 붉어집니다. 손님은 속눈썹이 아니라 시술 자체가 안 맞는다고 느끼십니다.", en: "Touch the skin and it stings. They blame the service." },
-      { kind: "point", title: "너무 띄우면", body: "닿는 면이 줄어드니 붙는 힘이 약해지고, 뿌리 쪽이 들떠서 보기에도 지저분합니다.", en: "Too far and the contact area disappears." },
-      { kind: "point", title: "0.5mm는 결과입니다", body: "이 숫자는 피부에 안 닿으면서 닿는 면을 확보하는 지점에서 나온 것입니다. 손님마다 눈꺼풀이 다르니 조금씩 다릅니다.", en: "The number came from balancing two limits." },
-      { kind: "point", title: "속눈썹이 자라면 벌어집니다", body: "시간이 지나면 이 간격이 커집니다. 리터치 시점을 정하는 기준이 여기 있습니다.", en: "The gap grows as the lash grows. That is your retouch timer." },
-      { kind: "close", title: "재보시면 보입니다", body: "감으로 하던 것을 한 번 재보면 내 기준이 어디쯤인지 알게 됩니다. 그때부터 조정이 가능해집니다.", en: "Measure once and you know where your habit sits." },
+      {
+        kind: "cover",
+        photo: "74",
+        title: "결을 읽어야\n디자인이 나옵니다",
+        subtitle: "붙이는 일과 설계하는 일의 차이",
+        en: "Reading the flow, not just placing",
+      },
+      {
+        kind: "point",
+        title: "그냥 붙이는 게 아닙니다",
+        body: "하나씩 정확히 붙였는데도 전체가 어수선해 보일 때가 있습니다. 각각은 맞는데 흐름이 안 맞아서입니다.",
+        en: "Each one placed right, and the whole set still looks messy.",
+      },
+      {
+        kind: "point",
+        title: "손님 속눈썹에 흐름이 있습니다",
+        body: "눈 앞머리부터 뒤까지 자라는 방향이 조금씩 바뀝니다. 이 흐름을 무시하고 같은 각도로 붙이면 중간이 뻗칩니다.",
+        en: "The growth direction shifts from inner to outer corner.",
+      },
+      {
+        kind: "point",
+        title: "붙이는 속눈썹에도 결이 있습니다",
+        body: "가모도 휘는 면과 방향이 정해져 있습니다. 어느 쪽을 대고 붙이느냐에 따라 같은 제품도 다르게 앉습니다.",
+        en: "The extension itself has a face and a direction.",
+      },
+      {
+        kind: "point",
+        title: "두 결이 어긋나면",
+        body: "붙는 힘은 멀쩡한데 결과가 지저분해 보입니다. 손님은 이유를 모른 채 뭔가 어색하다고 느끼십니다.",
+        en: "The bond holds, but the eye reads it as wrong.",
+      },
+      {
+        kind: "point",
+        title: "왕홍 스타일이 어려운 이유",
+        body: "결을 정교하게 맞춰야 나오는 디자인입니다. 기술이 부족해서가 아니라 흐름을 읽는 눈이 아직 안 잡혀서 어려운 경우가 대부분입니다.",
+        en: "It demands flow control. Not more skill — a different eye.",
+      },
+      {
+        kind: "close",
+        title: "붙이기 전에 봅니다",
+        body: "핀셋을 들기 전에 흐름부터 읽습니다. 이 순서가 잡히면 디자인이 눈에 띄게 정리됩니다.",
+        en: "Read the flow before you pick up the tweezers.",
+      },
     ],
   },
   {
@@ -962,24 +982,6 @@ Sometimes the answer is to stop for a while.`,
     ],
   },
   {
-    id: "first-visit",
-    caption: `처음 오신 손님께는 조금 천천히 갑니다.
-
-이 분이 무엇을 기대하고 오셨는지 모르는 채로 시작하면
-끝나고 나서 서로 다른 이야기를 하게 됩니다.
-
-With a first-time client, I slow down before I start.`,
-    hashtags: ["#속눈썹연장", "#고객관리", "#청담속눈썹", "#lashartist", "#koreanlash"],
-    slides: [
-      { kind: "cover", photo: "16", textTop: true, title: "처음 오신\n손님께는", subtitle: "시작 전에 천천히 가는 이유", en: "Before the first set" },
-      { kind: "point", title: "어디서 보고 오셨는지", body: "사진을 보고 오신 분과 소개로 오신 분은 기대가 다릅니다. 무엇을 보고 오셨는지 알면 어디를 맞춰야 할지 보입니다.", en: "What they saw before coming tells you what they expect." },
-      { kind: "point", title: "지난번 경험을 묻습니다", body: "처음이 아닌 경우가 많습니다. 어디가 불편했는지 들으면 이번에 피해야 할 것이 정해집니다.", en: "Ask what went wrong last time." },
-      { kind: "point", title: "안 되는 것을 먼저", body: "원하시는 만큼 안 나올 수 있다면 시작 전에 말씀드립니다. 끝나고 말하면 변명이 됩니다.", en: "Say what is not possible before you start." },
-      { kind: "point", title: "다음 약속까지", body: "언제쯤 오시면 좋은지 나가시기 전에 정합니다. 늦게 오시면 결과가 나빠지고, 그건 서로 손해입니다.", en: "Set the next visit before they leave." },
-      { kind: "close", title: "3분이 3주를 정합니다", body: "시작 전 대화가 시술만큼 결과를 정합니다. 손이 아니라 여기서 갈리는 경우가 많습니다.", en: "The three minutes before decide the three weeks after." },
-    ],
-  },
-  {
     id: "retouch-cycle",
     caption: `언제 오시면 되나요.
 
@@ -995,24 +997,6 @@ When should I come back? It depends on how yours grow.`,
       { kind: "point", title: "너무 늦게 오시면", body: "남아 있는 것이 적으면 리터치가 아니라 새로 하는 일이 됩니다. 시간도 비용도 더 듭니다.", en: "Come too late and it is not a retouch anymore." },
       { kind: "point", title: "너무 자주 오셔도", body: "아직 튼튼한 것을 떼고 다시 붙이면 손님 속눈썹이 손해를 봅니다. 기다리는 것도 관리입니다.", en: "Too often and the natural lash pays for it." },
       { kind: "close", title: "기록이 답을 줍니다", body: "이 손님이 몇 주에 어땠는지 적어두면 두 번째부터는 정확해집니다. 물어보실 때 근거 있게 말씀드릴 수 있습니다.", en: "Write it down once and the second answer is exact." },
-    ],
-  },
-  {
-    id: "stuck-alone",
-    caption: `혼자 하다 보면 막히는 지점이 옵니다.
-
-기술이 부족해서가 아니라
-내가 무엇을 잘못하는지 볼 사람이 없어서입니다.
-
-Working alone, you cannot see your own habits.`,
-    hashtags: ["#속눈썹교육", "#래쉬아티스트", "#원장님공부", "#lashtraining", "#koreanlash"],
-    slides: [
-      { kind: "cover", photo: "43", textTop: true, title: "혼자 하다\n막히는 지점", subtitle: "내 손은 내가 못 봅니다", en: "You cannot watch your own hands" },
-      { kind: "point", title: "습관은 안 보입니다", body: "매번 같은 각도로 잡고 있어도 스스로는 모릅니다. 결과가 조금씩 기울어도 그게 원래 내 그림이라고 생각하게 됩니다.", en: "Your own tilt looks like your style." },
-      { kind: "point", title: "물어볼 데가 없습니다", body: "이게 맞는 건지 확인할 사람이 없으면 잘 나온 날과 안 나온 날의 차이를 운으로 넘기게 됩니다.", en: "With no one to ask, good days feel like luck." },
-      { kind: "point", title: "손님은 말해주지 않습니다", body: "불편해도 대부분 그냥 안 오십니다. 그래서 무엇을 고쳐야 하는지 모른 채 손님만 줄어듭니다.", en: "They rarely tell you. They just stop coming." },
-      { kind: "point", title: "옆에서 한 번 보면", body: "몇 년 걸릴 것이 하루에 잡히는 일이 있습니다. 배우는 게 빠른 게 아니라, 보이는 게 빠릅니다.", en: "One session beside you can settle what years did not." },
-      { kind: "close", title: "그래서 크루입니다", body: "가르치고 끝내는 게 아니라 계속 물어볼 수 있는 자리를 만들려고 합니다.", en: "Not a course that ends. A place you can keep asking." },
     ],
   },
   {
@@ -1101,6 +1085,42 @@ Why I keep going — photos from artists I taught.`,
       { kind: "point", title: "가르치면 늘어납니다", body: "제가 가르친 원장님이 각자 자리에서 시술하시면, 제 기준이 닿는 손님이 그만큼 늘어납니다.", en: "Teach one, and the standard reaches many more chairs." },
       { kind: "point", title: "사진이 옵니다", body: "잘 나왔다고 보내주시는 사진을 보면 그날의 피로가 사라집니다. 제일 좋은 순간입니다.", en: "They send photos when it works. Best part of the job." },
       { kind: "close", title: "오래 남는 쪽으로", body: "기술은 사람이 그만두면 같이 사라집니다. 나눠 가진 사람이 많으면 남습니다.", en: "A technique dies with one person. Shared, it stays." },
+    ],
+  },
+  {
+    id: "lamp-care",
+    caption: `램프도 나이를 먹습니다.
+
+같은 자리에서 같은 시간을 비췄는데 예전 같지 않다면
+손보다 램프를 먼저 보실 때입니다.
+
+Lamps age. Same distance, same time, different result.`,
+    hashtags: ["#LED속눈썹연장", "#속눈썹교육", "#유지력", "#ledlash", "#koreanlash"],
+    slides: [
+      { kind: "cover", photo: "44", title: "램프도\n나이를 먹습니다", subtitle: "예전 같지 않다고 느낄 때", en: "Lamps age too" },
+      { kind: "point", title: "렌즈가 흐려집니다", body: "시술하면서 글루 성분이 미세하게 튑니다. 눈에 잘 안 보여도 빛이 지나가는 길이 조금씩 가려집니다.", en: "Residue builds on the lens, quietly." },
+      { kind: "point", title: "닦는 것도 순서가 있습니다", body: "마른 천으로 문지르면 흠집이 납니다. 흠집도 빛을 흩습니다. 부드러운 천으로 결을 따라 닦습니다.", en: "Scratches scatter light as much as residue does." },
+      { kind: "point", title: "광량은 서서히 떨어집니다", body: "고장이 나서 멈추는 게 아니라 조금씩 약해집니다. 그래서 알아차리기 어렵고, 손이 문제인 줄 알게 됩니다.", en: "It fades gradually, so you blame your hands." },
+      { kind: "point", title: "기준을 하나 정해두세요", body: "같은 조건에서 굳는 시간이 예전보다 길어졌다면 신호입니다. 감으로 넘기지 말고 적어두면 보입니다.", en: "If cure time creeps up under the same setup, that is your signal." },
+      { kind: "close", title: "도구도 관리 대상입니다", body: "재료와 손만 보지 말고 도구도 같이 봅니다. 셋 중 하나만 흔들려도 결과는 흔들립니다.", en: "Material, hands, tools. All three." },
+    ],
+  },
+  {
+    id: "choosing-curl",
+    caption: `컬을 고를 때 무엇을 보시나요.
+
+유행하는 컬보다 이 손님 눈에 남는 컬이 있습니다.
+같은 컬도 눈매에 따라 완전히 다르게 보입니다.
+
+The same curl reads differently on every eye.`,
+    hashtags: ["#속눈썹연장", "#눈매디자인", "#속눈썹교육", "#lashdesign", "#koreanlash"],
+    slides: [
+      { kind: "cover", photo: "41", textTop: true, title: "컬을 고를 때\n무엇을 보나", subtitle: "유행보다 이 눈에 남는 것", en: "Choosing the curl" },
+      { kind: "point", title: "눈꺼풀이 먼저입니다", body: "눈두덩이 두툼한 분께 강한 컬을 넣으면 뿌리가 눌려 보입니다. 정면에서는 예쁜데 옆에서 보면 답답합니다.", en: "A heavy lid presses a strong curl down." },
+      { kind: "point", title: "자라는 방향을 봅니다", body: "아래를 향해 자라는 눈에는 컬을 세워도 금방 내려옵니다. 컬 세기보다 방향을 먼저 잡아야 오래갑니다.", en: "If it grows downward, direction beats curl strength." },
+      { kind: "point", title: "눈매 길이와 균형", body: "눈이 길면 가운데를 세우고, 짧으면 뒤쪽에 힘을 줍니다. 같은 컬로도 눈매 인상이 달라집니다.", en: "Where you put the strength changes the shape." },
+      { kind: "point", title: "손님 생활도 변수입니다", body: "안경을 쓰시는 분은 컬이 렌즈에 닿습니다. 매일 눌리면 아무리 잘 잡아도 무너집니다.", en: "Glasses press the curl every day." },
+      { kind: "close", title: "유행은 참고입니다", body: "요즘 뭐가 유행이냐는 질문을 자주 받습니다. 참고는 하되 이 눈에 남는 것을 고르는 게 먼저입니다.", en: "Trends are a reference, not the answer." },
     ],
   },
 ];
