@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 # insta-auto — 인스타그램 캐러셀 자동 게시
 
 1인 뷰티샵 원장 교육을 하는 속눈썹 아티스트의 계정을 위한 시스템.
-캐러셀을 미리 만들어 큐에 쌓아두면 **매일 오전 8시(한국)에 하나씩 자동으로 올라간다.**
+캐러셀을 미리 만들어 큐에 쌓아두면 **매일 저녁 9시(한국)에 하나씩 자동으로 올라간다.**
 
 목표는 두 가지다. 국내에서는 "이 사람한테 배우고 싶다"는 신뢰를 만들고,
 해외 계정에는 "한국에서 유명한 속눈썹 아티스트"로 읽히게 하는 것.
@@ -28,7 +28,7 @@ lib/instagram.ts    Graph API 3단계 게시
 app/page.tsx        미리보기 — 피드 그리드 + 캐러셀 전체
 app/api/slide/…     슬라이드 → PNG (인스타가 가져갈 공개 주소)
 app/api/cron/…      매일 한 번 깨어나 오늘 글을 올린다
-vercel.json         cron: "0 23 * * *" = UTC 23시 = 한국 오전 8시
+vercel.json         cron: "0 12 * * *" = UTC 12시 = 한국 저녁 9시
 ```
 
 ## 설계상 지켜야 할 것

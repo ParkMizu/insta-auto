@@ -11,7 +11,7 @@
 import { POSTS, type Post } from "@/content/posts";
 
 /** 첫 글이 나가는 날. 환경변수로 덮을 수 있다 */
-const DEFAULT_START = "2026-09-09";
+const DEFAULT_START = "2026-09-11";
 
 /** 한국 시간 기준 YYYY-MM-DD */
 export function seoulDate(at: Date): string {

@@ -786,10 +786,13 @@ If the adhesive behaves differently today, check storage first.`,
 크루 강사도 바로 강단에 서지 않습니다.
 충분히 연습하고, 같은 기준으로 피드백하는 연습까지 거칩니다.
 
-어느 강사에게 배우셔도 같은 교육과 같은 피드백을 받으시는 것.
-그게 저희가 만들어가는 원칙입니다.
+서브 강사는 교육 포인트 테스팅을 통과해야 함께 섭니다.
+크루도 같은 방식으로 점검합니다.
 
-Every crew instructor trains before they teach.`,
+그래서 위닛 크루는 그냥 모임이 아닙니다.
+저희 기준을 배우면서 본인의 교육 기준을 만들어 갑니다.
+
+Every crew instructor is tested before they teach.`,
     hashtags: ["#위닛크루", "#속눈썹교육", "#래쉬아티스트", "#lasheducation", "#koreanlash"],
     slides: [
       {
@@ -825,10 +828,22 @@ Every crew instructor trains before they teach.`,
         en: "Saying it is wrong is easy. Saying how and why takes practice.",
       },
       {
+        kind: "point",
+        title: "테스팅을 거칩니다",
+        body: "서브 강사는 교육 포인트 테스팅을 통과해야 함께 섭니다. 시술이 아니라 무엇을 어떤 순서로 짚는지를 봅니다.",
+        en: "Sub-instructors pass a teaching-point test, not a skills test.",
+      },
+      {
+        kind: "point",
+        title: "크루도 테스팅합니다",
+        body: "강사만이 아닙니다. 크루도 같은 방식으로 점검합니다. 기준을 나눠 가진 사람들이라 기준에서 멀어지면 서로 알아차려야 합니다.",
+        en: "Not only instructors. The crew is checked the same way.",
+      },
+      {
         kind: "close",
-        title: "만들어가는 중입니다",
-        body: "아직 완성된 시스템이라고 말씀드리지는 못합니다. 다만 어느 자리에서 배우셔도 같은 교육을 받으시게 하는 것, 그 원칙만은 지키고 있습니다.",
-        en: "Not finished yet. But the principle holds — same training, whoever teaches it.",
+        title: "각자의 기준을 만듭니다",
+        body: "위닛 크루는 그냥 모임이 아닙니다. 저희 기준을 배우면서 본인의 교육 기준을 만들어 갑니다. 배운 것을 그대로 옮기는 사람이 아니라 자기 기준을 세우는 사람이 되시는 것.",
+        en: "Not a group that copies. Each builds their own standard from ours.",
       },
     ],
   },
@@ -1000,24 +1015,6 @@ When should I come back? It depends on how yours grow.`,
     ],
   },
   {
-    id: "crew-life",
-    caption: `크루로 일한다는 것.
-
-같은 기준으로 시술하는 사람이 여럿이면
-기술이 저 하나로 끝나지 않습니다.
-
-Working as a crew — the standard outlives one pair of hands.`,
-    hashtags: ["#위닛크루", "#속눈썹교육", "#래쉬아티스트", "#lasheducation", "#koreanlash"],
-    slides: [
-      { kind: "cover", photo: "20", title: "크루로\n일한다는 것", subtitle: "기준을 나눠 가진 사람들", en: "What it means to work as a crew" },
-      { kind: "point", title: "같은 말을 씁니다", body: "간격, 방향, 띄우는 거리를 같은 이름으로 부릅니다. 말이 같으면 서로 봐줄 수 있습니다.", en: "Same words for the same things. Then you can check each other." },
-      { kind: "point", title: "혼자 판단하지 않습니다", body: "애매한 케이스를 사진 찍어 물어봅니다. 혼자 고민하다 잘못 가는 것보다 훨씬 빠릅니다.", en: "Send a photo, ask. Faster than guessing alone." },
-      { kind: "point", title: "잘된 것을 나눕니다", body: "누가 좋은 방법을 찾으면 다음 주에 모두가 씁니다. 혼자였으면 그 사람만 알고 끝났을 것입니다.", en: "One person's discovery becomes everyone's next week." },
-      { kind: "point", title: "손님이 알아봅니다", body: "어느 원장님께 가도 비슷한 결과가 나오면 그게 브랜드가 됩니다. 사람이 아니라 기준을 믿게 됩니다.", en: "When any of us gives the same result, that becomes the brand." },
-      { kind: "close", title: "혼자보다 멀리", body: "제 기술이 저에게서 끝나면 아무것도 아닙니다. 나눠 가진 사람이 많아질수록 오래갑니다.", en: "A technique that stops with me is worth nothing." },
-    ],
-  },
-  {
     id: "what-they-ask",
     caption: `배우러 오시는 분들이 가장 많이 묻는 것.
 
@@ -1088,21 +1085,57 @@ Why I keep going — photos from artists I taught.`,
     ],
   },
   {
-    id: "lamp-care",
-    caption: `램프도 나이를 먹습니다.
+    id: "crew-standard",
+    caption: `위닛 크루는 왜 테스팅을 할까요.
 
-같은 자리에서 같은 시간을 비췄는데 예전 같지 않다면
-손보다 램프를 먼저 보실 때입니다.
+걸러내려는 것이 아닙니다.
+기준에서 멀어졌을 때 서로 알아차리려는 것입니다.
 
-Lamps age. Same distance, same time, different result.`,
-    hashtags: ["#LED속눈썹연장", "#속눈썹교육", "#유지력", "#ledlash", "#koreanlash"],
+배운 것을 그대로 옮기는 크루가 아니라
+저희 기준을 바탕으로 본인의 교육 기준을 세우는 크루.
+
+그래서 단순한 모임이 아닙니다.
+
+We test not to filter, but to stay aligned.`,
+    hashtags: ["#위닛크루", "#속눈썹교육", "#래쉬아티스트", "#lasheducation", "#koreanlash"],
     slides: [
-      { kind: "cover", photo: "44", title: "램프도\n나이를 먹습니다", subtitle: "예전 같지 않다고 느낄 때", en: "Lamps age too" },
-      { kind: "point", title: "렌즈가 흐려집니다", body: "시술하면서 글루 성분이 미세하게 튑니다. 눈에 잘 안 보여도 빛이 지나가는 길이 조금씩 가려집니다.", en: "Residue builds on the lens, quietly." },
-      { kind: "point", title: "닦는 것도 순서가 있습니다", body: "마른 천으로 문지르면 흠집이 납니다. 흠집도 빛을 흩습니다. 부드러운 천으로 결을 따라 닦습니다.", en: "Scratches scatter light as much as residue does." },
-      { kind: "point", title: "광량은 서서히 떨어집니다", body: "고장이 나서 멈추는 게 아니라 조금씩 약해집니다. 그래서 알아차리기 어렵고, 손이 문제인 줄 알게 됩니다.", en: "It fades gradually, so you blame your hands." },
-      { kind: "point", title: "기준을 하나 정해두세요", body: "같은 조건에서 굳는 시간이 예전보다 길어졌다면 신호입니다. 감으로 넘기지 말고 적어두면 보입니다.", en: "If cure time creeps up under the same setup, that is your signal." },
-      { kind: "close", title: "도구도 관리 대상입니다", body: "재료와 손만 보지 말고 도구도 같이 봅니다. 셋 중 하나만 흔들려도 결과는 흔들립니다.", en: "Material, hands, tools. All three." },
+      {
+        kind: "cover",
+        photo: "25",
+        title: "크루가 된\n다음",
+        subtitle: "기준을 나눠 가진 뒤에 생기는 일",
+        en: "After you join the crew",
+      },
+      {
+        kind: "point",
+        title: "테스팅을 계속합니다",
+        body: "들어올 때 한 번 보고 끝나지 않습니다. 크루도 강사도 주기적으로 점검합니다. 한 번 맞춘 기준은 시간이 지나면 각자 쪽으로 조금씩 기웁니다.",
+        en: "Not a one-time check. Standards drift if you leave them alone.",
+      },
+      {
+        kind: "point",
+        title: "걸러내려는 게 아닙니다",
+        body: "누가 못한다고 표시하려는 것이 아닙니다. 어디서 멀어졌는지 본인이 알아야 되돌아올 수 있어서입니다.",
+        en: "Not to mark anyone as lacking. So they can see where they drifted.",
+      },
+      {
+        kind: "point",
+        title: "그대로 옮기지 않습니다",
+        body: "제가 가르친 말을 그대로 외워 쓰시면 손님이 바뀔 때 막힙니다. 기준은 같아도 설명은 각자의 말이어야 합니다.",
+        en: "Repeating my words breaks the moment a client differs.",
+      },
+      {
+        kind: "point",
+        title: "자기 기준을 세웁니다",
+        body: "저희 기준을 바탕에 두고 본인의 교육 기준을 만들어 가십니다. 무엇을 먼저 볼지, 어디까지 허용할지를 스스로 정하게 됩니다.",
+        en: "They build their own teaching standard on top of ours.",
+      },
+      {
+        kind: "close",
+        title: "단순한 모임이 아닙니다",
+        body: "같은 이름을 쓰는 사람들의 모임이 아니라, 같은 기준에서 출발해 각자의 기준을 세우는 사람들입니다.",
+        en: "Not a group with a shared name. A group with a shared starting point.",
+      },
     ],
   },
   {
