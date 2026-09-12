@@ -87,6 +87,14 @@ export async function publishCarousel(
   config: IgConfig,
   imageUrls: string[],
   caption: string,
+  /**
+   * 공동 작업자로 초대할 계정. 초대를 수락하면 **그 계정 피드에도 같은 글이
+   * 뜬다.** 좋아요와 댓글도 함께 쌓인다.
+   *
+   * 캐러셀은 **부모에만** 넣는다. 슬라이드마다 넣으면 거절당한다.
+   * 초대일 뿐이라 상대가 수락해야 뜨고, 수락 전에는 원장님 계정에만 보인다.
+   */
+  collaborators: string[] = [],
 ): Promise<PublishResult> {
   if (imageUrls.length < 2) {
     throw new Error("캐러셀은 2장 이상이어야 합니다");
@@ -108,6 +116,7 @@ export async function publishCarousel(
     media_type: "CAROUSEL",
     children: childIds.join(","),
     caption,
+    ...(collaborators.length ? { collaborators: JSON.stringify(collaborators) } : {}),
   });
   const parentId = String(parent.id);
   await waitReady(config, parentId);

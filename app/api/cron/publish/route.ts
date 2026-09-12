@@ -4,6 +4,7 @@
  * Vercel Cron이 이 주소를 호출한다. 아무나 부르면 안 되므로 헤더를 확인한다.
  * (Vercel은 자기 cron 요청에 CRON_SECRET을 Authorization 헤더로 붙여 보낸다.)
  */
+import { COLLABORATORS } from "@/content/brand";
 import { NextResponse } from "next/server";
 import { publishCarousel, readIgConfig } from "@/lib/instagram";
 import { postForDate, remaining } from "@/lib/queue";
@@ -59,7 +60,7 @@ export async function GET(request: Request) {
   const caption = `${post.caption}\n\n${post.hashtags.join(" ")}`;
 
   try {
-    const result = await publishCarousel(config, imageUrls, caption);
+    const result = await publishCarousel(config, imageUrls, caption, COLLABORATORS);
     return NextResponse.json({
       published: true,
       postId: post.id,

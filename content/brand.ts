@@ -82,3 +82,15 @@ export const BRAND = {
 } as const;
 
 export type Brand = typeof BRAND;
+
+/**
+ * 글을 함께 올릴 계정.
+ *
+ * 공동 작업자로 초대하면 **그 계정 피드에도 같은 글이 뜨고** 좋아요와 댓글이
+ * 함께 쌓인다. 원장님 개인 계정과 아카데미 계정 양쪽에 같은 교육 콘텐츠를
+ * 노출하려고 넣었다.
+ *
+ * 초대일 뿐이라 **상대가 수락해야 뜬다.** 수락 전에는 원장님 계정에만 보인다.
+ * 같은 분이 두 계정을 다 쓰시므로 알림에서 바로 수락하시면 된다.
+ */
+export const COLLABORATORS = ["weneed_eyecademy"];
