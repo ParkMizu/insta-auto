@@ -66,7 +66,7 @@ export async function GET(request: Request) {
       return NextResponse.json({
         published: false,
         reason: "오늘 이미 올린 글입니다",
-        post: scheduled.id,
+        post: scheduled.post.id,
       });
     }
 
