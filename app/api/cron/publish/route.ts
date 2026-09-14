@@ -6,7 +6,7 @@
  */
 import { COLLABORATORS } from "@/content/brand";
 import { NextResponse } from "next/server";
-import { publishCarousel, readIgConfig } from "@/lib/instagram";
+import { alreadyPublished, publishCarousel, readIgConfig } from "@/lib/instagram";
 import { postForDate, remaining } from "@/lib/queue";
 
 /** 슬라이드가 많으면 컨테이너 대기가 길어진다 */
@@ -60,6 +60,16 @@ export async function GET(request: Request) {
   const caption = `${post.caption}\n\n${post.hashtags.join(" ")}`;
 
   try {
+    // 오늘 이미 올린 글이면 다시 올리지 않는다.
+    // cron 주소를 두 번 부르면 같은 글이 두 번 올라간다 — 실제로 그런 적이 있다
+    if (await alreadyPublished(config, caption, now)) {
+      return NextResponse.json({
+        published: false,
+        reason: "오늘 이미 올린 글입니다",
+        post: scheduled.id,
+      });
+    }
+
     const result = await publishCarousel(config, imageUrls, caption, COLLABORATORS);
     return NextResponse.json({
       published: true,

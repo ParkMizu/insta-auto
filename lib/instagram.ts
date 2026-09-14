@@ -34,12 +34,19 @@ async function graph(
   path: string,
   config: IgConfig,
   body: Record<string, string>,
+  method: "POST" | "GET" = "POST",
 ): Promise<Record<string, unknown>> {
-  const res = await fetch(`${GRAPH}/${path}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ ...body, access_token: config.accessToken }),
-  });
+  const params = new URLSearchParams({ ...body, access_token: config.accessToken });
+  const res = await fetch(
+    method === "GET" ? `${GRAPH}/${path}?${params}` : `${GRAPH}/${path}`,
+    method === "GET"
+      ? { method: "GET" }
+      : {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: params,
+        },
+  );
   const payload = (await res.json()) as Record<string, unknown>;
   if (!res.ok) {
     // Meta 오류는 error.message에 사람이 읽을 이유가 들어있다
@@ -127,4 +134,38 @@ export async function publishCarousel(
   });
 
   return { mediaId: String(published.id), slideCount: imageUrls.length };
+}
+
+/**
+ * 오늘 이미 올린 글인지 본다.
+ *
+ * **게시 상태를 저장하지 않는 구조라 중복을 막을 장치가 없었다.** cron 주소를
+ * 두 번 부르면 같은 글이 두 번 올라간다. 실제로 확인용 요청 세 번에 같은
+ * 캐러셀이 세 번 올라간 적이 있다.
+ *
+ * 그래서 올리기 전에 최근 글을 훑어 **같은 캡션 첫 줄이 오늘 안에 있으면**
+ * 건너뛴다. 캡션 첫 줄은 글마다 다르고, 큐가 하루 하나씩 나가므로 충분하다.
+ */
+export async function alreadyPublished(
+  config: IgConfig,
+  caption: string,
+  now = new Date(),
+): Promise<boolean> {
+  const head = caption.split("\n")[0].trim();
+  if (!head) return false;
+  try {
+    const res = await graph(`${config.userId}/media`, config, {
+      fields: "caption,timestamp",
+      limit: "10",
+    }, "GET");
+    const today = now.toISOString().slice(0, 10);
+    for (const m of (res.data ?? []) as { caption?: string; timestamp?: string }[]) {
+      if (!m.timestamp?.startsWith(today)) continue;
+      if ((m.caption ?? "").split("\n")[0].trim() === head) return true;
+    }
+    return false;
+  } catch {
+    // 조회에 실패하면 막지 않는다. 못 올리는 것보다 낫다
+    return false;
+  }
 }
